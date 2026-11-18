@@ -1,12 +1,12 @@
 # Reporte: La Patasola: la leyenda de la mujer de una sola pierna
 
-- Generado: 2026-11-17T20:32:21
+- Generado: 2026-11-18T14:45:33
 - Guion: `videos/la-patasola/guion.md`  (**modo prueba**)
 - Voz: `es-CO-GonzaloNeural` (+8%)
 - Escenas: 105 (2 con animación)
 - Duración estimada: 8:55.30 · real: **6:07.03**
 - Escenas con imagen de Flow: 105 de 105 (64 ilustraciones distintas; el resto, dibujo de respaldo)
-- Shorts: short_1.mp4, short_2.mp4
+- Shorts: shorts/short_1.mp4, shorts/short_2.mp4
 - Clips de video de Flow: 7 (de 7 pedidos en el guion)
 - Música de fondo: no (no existe musica/fondo.mp3)
 - Resultado: **OK**
@@ -23,8 +23,8 @@
 | OK | Tiene pista de audio | aac |
 | OK | Duración del video = suma de escenas | video 367.03s vs escenas 367.03s |
 | OK | El audio no está en silencio | volumen medio -25.3 dB |
-| OK | Short short_1.mp4 vertical y de máx. 60 s | 1080x1920, 40.8s |
-| OK | Short short_2.mp4 vertical y de máx. 60 s | 1080x1920, 40.6s |
+| OK | Short shorts/short_1.mp4 vertical y de máx. 60 s | 1080x1920, 40.8s |
+| OK | Short shorts/short_2.mp4 vertical y de máx. 60 s | 1080x1920, 40.6s |
 | AVISO | Duración total entre 10 y 15 min | 6:07.03 (modo prueba: se esperaba fuera de rango) |
 
 ## Problemas

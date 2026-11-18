@@ -1,7 +1,7 @@
 # Archivos pesados o generados (no caben en GitHub o se regeneran)
 videos/*/trabajo/
-videos/*/*.mp4
-videos/*/*.wav
+videos/**/*.mp4
+videos/**/*.wav
 videos/.actual
 musica/*.mp3
 

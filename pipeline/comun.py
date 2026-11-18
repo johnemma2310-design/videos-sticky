@@ -19,6 +19,7 @@ DIR_SUBS = TRABAJO / "subtitulos"
 DIR_CLIPS = TRABAJO / "clips"
 DIR_FLOW = TRABAJO / "flow"
 SALIDA = PROYECTO
+DIR_SHORTS = PROYECTO / "shorts"  # short_1.mp4, short_2.mp4 de este video
 ESCENAS_JSON = TRABAJO / "escenas.json"
 
 ANCHO, ALTO = 1920, 1080
@@ -40,7 +41,7 @@ def cargar_config(ruta: Path) -> dict:
 def preparar_carpetas():
     if not VIDEO:
         raise PipelineError("No se indicó el video. Uso: python generar_video.py <nombre>  (carpeta videos/<nombre>/)")
-    for d in (TRABAJO, DIR_AUDIO, DIR_IMG, DIR_SUBS, DIR_CLIPS, DIR_FLOW, SALIDA):
+    for d in (TRABAJO, DIR_AUDIO, DIR_IMG, DIR_SUBS, DIR_CLIPS, DIR_FLOW, SALIDA, DIR_SHORTS):
         d.mkdir(parents=True, exist_ok=True)
 
 

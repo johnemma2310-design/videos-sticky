@@ -5,7 +5,7 @@ y `short=fin` en la frase donde termina. Igual para `short=2`. Si el guion no lo
 el Short 1 es el comienzo (el gancho) y el Short 2 empieza en el primer clip de Flow de la
 segunda mitad (o en la mitad del video).
 """
-from .comun import SALIDA, TRABAJO, PipelineError
+from .comun import DIR_SHORTS, SALIDA, TRABAJO, PipelineError
 from . import subtitulos as subs
 
 ANCHO_V, ALTO_V = 1080, 1920
@@ -62,8 +62,9 @@ def generar(datos, cfg, video_mudo, audio, log=print) -> list:
                   (cfg["shorts"]["texto_final"], max(0.5, dur - 2.6), dur, "Titulo")]
         ass = f"short_{n}.ass"
         subs.escribir_ass(escenas, TRABAJO / ass, cfg, ANCHO_V, ALTO_V, desde, hasta, extras)
-        salida = SALIDA / f"short_{n}.mp4"
+        DIR_SHORTS.mkdir(parents=True, exist_ok=True)
+        salida = DIR_SHORTS / f"short_{n}.mp4"
         exportar(cfg, video_mudo, audio, desde, dur, ass, salida, f"Short {n}", filtro_previo=COMPOSICION)
-        log(f"  short_{n}.mp4: {dur:.1f}s (desde {desde:.1f}s)")
-        hechos.append({"archivo": salida.name, "desde": round(desde, 2), "duracion": round(dur, 2)})
+        log(f"  shorts/short_{n}.mp4: {dur:.1f}s (desde {desde:.1f}s)")
+        hechos.append({"archivo": salida.relative_to(SALIDA).as_posix(), "desde": round(desde, 2), "duracion": round(dur, 2)})
     return hechos

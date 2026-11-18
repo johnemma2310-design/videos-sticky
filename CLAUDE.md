@@ -14,7 +14,7 @@ Cada historia = **3 videos**: el largo + 2 Shorts verticales. **3 clips de Flow 
 ## Carpetas
 
 Cada video vive en `videos/<nombre>/`: `guion.md`, `trabajo/` (audios, imágenes, `flow/`),
-`video.mp4`, `short_1.mp4`, `short_2.mp4`, `video.srt` (subtítulos para subir a YouTube) y `reporte.md`.
+`video.mp4`, `shorts/` (con `short_1.mp4` y `short_2.mp4`), `video.srt` (subtítulos para subir a YouTube) y `reporte.md`.
 Los videos llevan subtítulos palabra por palabra quemados, whoosh en cada cambio de imagen y un
 segundo encuadre (punch-in) en las escenas largas; la voz va a +8% y sin silencios entre frases.
 

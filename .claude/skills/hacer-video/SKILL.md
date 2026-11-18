@@ -49,7 +49,7 @@ Detente y explica solo si algo falla.
 ## 3. Entrega
 
 Dile al usuario, en pocas líneas:
-- Dónde quedaron `video.mp4`, `short_1.mp4`, `short_2.mp4`, `video.srt`, las miniaturas y `publicacion.md`.
+- Dónde quedaron `video.mp4`, `shorts/short_1.mp4`, `shorts/short_2.mp4`, `video.srt`, las miniaturas y `publicacion.md`.
 - El título, la descripción COMPLETA, las etiquetas y el comentario fijado del video largo pegados en el chat en bloques de código, listos para copiar; y los títulos de los Shorts.
 - La duración.
 - Los puntos de Flow gastados.
