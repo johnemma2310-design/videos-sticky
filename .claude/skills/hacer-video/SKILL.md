@@ -1,0 +1,56 @@
+---
+name: hacer-video
+description: Hace un video completo de Sticky a partir de una historia o tema (guion, imágenes y 3 clips en Google Flow, video largo, 2 Shorts verticales). Usar cuando el usuario da una historia, leyenda o tema y pide el video.
+---
+
+# Hacer un video a partir de una historia
+
+El usuario solo da la historia o el tema. Todo lo demás lo haces tú, siguiendo `CLAUDE.md`.
+Detente y explica solo si algo falla.
+
+## 1. Guion (`videos/<nombre>/guion.md`)
+
+- `<nombre>`: en minúsculas, con guiones (ej. `la-llorona`).
+- Si el usuario solo da un tema, investiga con WebSearch: usa 2-3 fuentes y no inventes datos. Cuando las versiones de una leyenda no coinciden, di "según algunas versiones".
+- Tamaño: unas 1.700-2.000 palabras. Con la voz acelerada eso da 10-12 minutos.
+- Una frase = una escena de ~4-6 s. Usa frases cortas y fáciles de narrar.
+- Estructura, como en `videos/la-patasola/guion.md`:
+  1. Gancho de miedo o misterio.
+  2. Presentación de Sticky.
+  3. Origen.
+  4. Cómo es.
+  5. Señales o datos curiosos.
+  6. Un relato dramatizado.
+  7. Otras versiones o comparación.
+  8. Por qué existe la historia (lección).
+  9. Cierre con pregunta para comentarios.
+- Público: niños, jóvenes y adultos. Sin sangre, armas en uso ni violencia explícita.
+- Al inicio, define `@Personaje: descripción` para cada personaje o lugar que se repite.
+- Pon `[[imagen=...]]` cada 1-2 frases; las demás siguen el plano anterior.
+  - Usa `texto=` con palabras clave en ~1 de cada 6 imágenes.
+  - Usa `tarjeta=si` en las explicaciones (listas, mapas, conceptos).
+  - Sticky debe aparecer en ~1 de cada 6 imágenes.
+- Exactamente **3 `clip=`** (~27 puntos de Flow) en los momentos de más acción.
+- **2 Shorts**: `short=1|Título` y `short=2|Título` en la frase donde empieza cada uno, y `short=fin` donde termina. Cada uno dura máx. 58 s (~12-14 frases) y debe entenderse solo. Lo ideal: el gancho y el relato dramatizado.
+- No describas en `imagen` a una "mujer joven bonita/seductora" ni armas en uso: Flow los rechaza.
+
+## 2. Producción
+
+1. `python generar_video.py <nombre> --hasta voz`
+2. `python -m pipeline.flow exportar` y generar las imágenes en Flow (CLAUDE.md, paso 4).
+3. `python -m pipeline.flow importar` y revisar una hoja de contacto numerada contra los `imagen=`. Si hay imágenes corridas o rechazadas, corregir y repetir solo las que faltan.
+4. Clips: `python -m pipeline.flow clips`, luego `pipeline/flow_clips.js` (CLAUDE.md, paso 5b). Al terminar, volver Flow a modo Imagen y cerrar la pestaña.
+5. `python generar_video.py <nombre> --desde imagenes` (con `--prueba` si dura menos de 10 min).
+6. Revisar fotogramas del video y de los Shorts.
+7. Miniatura minimalista: 2-4 prompts en Flow (fondo liso, Sticky + un solo elemento del tema, mucho espacio vacío, sin texto), y luego título corto (2-3 palabras) con Pillow en Arial Black → `miniatura_minimal_N.jpg` (1280x720).
+8. `descripcion.txt` con el formato de siempre: párrafo gancho, "En este video verás…", párrafo de preguntas, y "FUENTES BIBLIOGRÁFICAS:" solo con fuentes verificadas.
+
+## 3. Entrega
+
+Dile al usuario, en pocas líneas:
+- Dónde quedaron `video.mp4`, `short_1.mp4`, `short_2.mp4` y `video.srt`.
+- La duración.
+- Los puntos de Flow gastados.
+- Cualquier problema.
+
+Él sube los videos a YouTube; tú nunca publicas nada.

@@ -1,0 +1,116 @@
+{
+  "voz": {
+    "nombre": "es-CO-GonzaloNeural",
+    "velocidad": "+8%",
+    "tono": "+0Hz",
+    "volumen": "+0%",
+    "reintentos": 3,
+    "margen_s": 0.06
+  },
+  "video": {
+    "fps": 30,
+    "crf": 20,
+    "preset": "medium",
+    "zoom_max": 1.12,
+    "pausa_entre_escenas": 0.12,
+    "punch_in": 1.28,
+    "corte_extra_desde_s": 3.2
+  },
+  "duracion": {
+    "minimo_min": 10,
+    "maximo_min": 15,
+    "palabras_por_minuto": 150
+  },
+  "musica": {
+    "archivo": "musica/fondo.mp3",
+    "volumen": 0.08,
+    "fade_in_s": 2,
+    "fade_out_s": 3
+  },
+  "subtitulos": {
+    "quemar": false,
+    "tamano": 50,
+    "max_ancho": 1500,
+    "max_lineas": 2,
+    "margen_inferior": 55,
+    "palabras": true,
+    "palabras_fuente": "Arial Black",
+    "palabras_archivo_fuente": "C:/Windows/Fonts/ariblk.ttf",
+    "palabras_tamano": 96,
+    "palabras_tamano_vertical": 104,
+    "palabras_margen": 60,
+    "palabras_margen_vertical": 560,
+    "palabras_por_grupo": 3,
+    "palabras_max_letras": 20,
+    "palabras_color_resalte": "&H00E0FF"
+  },
+  "estilo": {
+    "fuentes": [
+      "C:/Windows/Fonts/segoeuib.ttf",
+      "C:/Windows/Fonts/arialbd.ttf",
+      "DejaVuSans-Bold.ttf"
+    ],
+    "vineta": 0.6,
+    "paleta": {
+      "cielo_arriba": "#0d1020",
+      "cielo_abajo": "#2b3150",
+      "suelo": "#121420",
+      "linea_suelo": "#3d4466",
+      "siluetas": "#191c2b",
+      "siluetas_lejanas": "#252a45",
+      "acento": "#3b82f6",
+      "peligro": "#d6453d",
+      "luz": "#f3e9c6",
+      "texto": "#f5f5f5",
+      "papel": "#e6dfcb",
+      "tinta": "#2a2a2a",
+      "criatura": "#06070b"
+    }
+  },
+  "personaje": {
+    "nombre": "Sticky",
+    "color_cuerpo": "#f5f5f5",
+    "color_ojos": "#121420",
+    "grosor": 13,
+    "radio_cabeza": 44,
+    "torso": 150,
+    "brazo": 78,
+    "pierna": 92,
+    "accesorio": "bufanda",
+    "color_accesorio": "#3b82f6",
+    "posicion_x": 640
+  },
+  "flow": {
+    "estilo": "Ilustración de caricatura dibujada a mano para un video educativo, contornos negros gruesos, colores vivos y cálidos, sombreado suave, fondo detallado, personajes con ojos grandes y expresivos, apto para niños, sin sangre, formato horizontal 16:9.",
+    "estilo_tarjeta": "Ilustración sencilla de caricatura dibujada a mano sobre fondo blanco liso, contornos negros gruesos, colores vivos, el dibujo ocupa la parte inferior y derecha y deja vacía la esquina superior izquierda, apto para niños, formato horizontal 16:9.",
+    "personaje": "un personaje de palitos con cabeza redonda blanca y grande, ojos grandes y expresivos, cuerpo y extremidades de líneas blancas con contorno negro, y una bufanda azul brillante alrededor del cuello (la bufanda siempre es azul, nunca de otro color)",
+    "sin_texto": "Sin texto, sin letras, sin números, sin subtítulos, sin marcas de agua.",
+    "estilo_clip": "Cámara quieta. Mantener exactamente el mismo estilo de ilustración de caricatura dibujada a mano y los mismos colores. Sin texto.",
+    "clip_velocidad_min": 0.6,
+    "rotulo_sobre_flow": false
+  },
+  "palabra_clave": {
+    "fuentes": [
+      "C:/Windows/Fonts/segoeprb.ttf",
+      "C:/Windows/Fonts/Inkfree.ttf"
+    ],
+    "tamano": 110,
+    "tamano_tarjeta": 124,
+    "max_ancho": 1000,
+    "margen": 170,
+    "color": "#1f1f1f",
+    "borde": 10
+  },
+  "animacion": {
+    "velocidad_px_s": 320,
+    "zancadas_por_s": 2.4
+  },
+  "sonido": {
+    "whoosh": true,
+    "volumen_whoosh": 0.35
+  },
+  "shorts": {
+    "max_s": 58,
+    "texto_final": "Historia completa en el canal"
+  }
+}

@@ -1,0 +1,13 @@
+# Archivos pesados o generados (no caben en GitHub o se regeneran)
+videos/*/trabajo/
+videos/*/*.mp4
+videos/*/*.wav
+videos/.actual
+musica/*.mp3
+
+# Python
+__pycache__/
+*.pyc
+
+# Ajustes locales de Claude Code (permisos de esta PC)
+.claude/settings.local.json
