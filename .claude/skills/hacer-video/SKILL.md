@@ -43,12 +43,14 @@ Detente y explica solo si algo falla.
 5. `python generar_video.py <nombre> --desde imagenes` (con `--prueba` si dura menos de 10 min).
 6. Revisar fotogramas del video y de los Shorts.
 7. Miniatura minimalista: 2-4 prompts en Flow (fondo liso, Sticky + un solo elemento del tema, mucho espacio vacío, sin texto), y luego título corto (2-3 palabras) con Pillow en Arial Black → `miniatura_minimal_N.jpg` (1280x720).
-8. `descripcion.txt` con el formato de siempre: párrafo gancho, "En este video verás…", párrafo de preguntas, y "FUENTES BIBLIOGRÁFICAS:" solo con fuentes verificadas.
+8. `descripcion.txt` con el formato de siempre: párrafo gancho, "En este video verás…", párrafo de preguntas, CAPÍTULOS (desde los `#` del guion y los tiempos de `reporte.md`), "FUENTES BIBLIOGRÁFICAS:" solo con fuentes verificadas y 5 hashtags.
+9. `publicacion.md` (modelo: `videos/la-patasola/publicacion.md`) para el video largo y para CADA Short: título (≤60 caracteres, pregunta + frase exacta que la gente busca; Shorts con `#Shorts`), descripción, hashtags (los 3 primeros se ven sobre el título), etiquetas, comentario fijado (pregunta que invite a responder + pedir la próxima leyenda) y ajustes (público, categoría, "video relacionado" de los Shorts = video largo). Si vidIQ está conectado, usa `vidiq_keyword_research` para elegir las palabras clave.
 
 ## 3. Entrega
 
 Dile al usuario, en pocas líneas:
-- Dónde quedaron `video.mp4`, `short_1.mp4`, `short_2.mp4` y `video.srt`.
+- Dónde quedaron `video.mp4`, `short_1.mp4`, `short_2.mp4`, `video.srt`, las miniaturas y `publicacion.md`.
+- El título, la descripción, las etiquetas y el comentario fijado del video largo pegados en el chat, listos para copiar.
 - La duración.
 - Los puntos de Flow gastados.
 - Cualquier problema.
