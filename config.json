@@ -112,5 +112,10 @@
   "shorts": {
     "max_s": 58,
     "texto_final": "Historia completa en el canal"
+  },
+  "outro": {
+    "activo": true,
+    "texto_video": "¡Si te gustó esta historia, suscríbete y activa la campanita para no perderte la próxima!",
+    "texto_short": "¡Suscríbete y activa la campanita para ver la historia completa!"
   }
 }

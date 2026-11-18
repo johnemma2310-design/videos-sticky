@@ -12,7 +12,8 @@ python -m pipeline.flow exportar | importar            # imágenes de Google Flo
 
 Resultado en `videos/<nombre>/`:
 - `video.mp4`: 1080p, listo para subir a YouTube.
-- `shorts/`: `short_1.mp4` y `short_2.mp4`, verticales 1080x1920 (máx. 58 s).
+- `shorts/`: `short_1.mp4` y `short_2.mp4`, verticales 1080x1920 (máx. 58 s con el cierre).
+- Todos terminan con el cierre animado de Sticky ("suscríbete" + campanita), de `pipeline/outro.py`.
 - `publicacion.md` y `descripcion.txt`: títulos, descripción, etiquetas y comentario fijado.
 - `miniatura*.jpg`: miniaturas 1280x720.
 - `video.srt`: subtítulos. Se suben aparte en YouTube Studio (Subtítulos → Subir archivo).

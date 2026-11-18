@@ -133,6 +133,8 @@ def escribir_ass(escenas, ruta, cfg, ancho, alto, desde=0.0, hasta=None, extras=
         f"100,100,0,0,1,{max(4, tam // 12)},3,2,60,60,{margen},1",
         f"Style: Titulo,{cs['palabras_fuente']},{int(tam * 1.15)},&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,-1,0,0,0,"
         f"100,100,0,0,1,{max(5, tam // 10)},4,8,60,60,{int(alto * 0.07)},1",
+        f"Style: Hud,{cs['palabras_fuente']},{max(30, tam // 2)},&H0000DCFF,&H0000DCFF,&H90200A05,&H90200A05,-1,0,0,0,"
+        f"100,100,0,0,3,10,0,7,170,60,40,1",
         "", "[Events]", "Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text",
     ]
     hasta = hasta if hasta is not None else float("inf")
@@ -148,6 +150,23 @@ def escribir_ass(escenas, ruta, cfg, ancho, alto, desde=0.0, hasta=None, extras=
                       for x in g]
             lineas.append(f"Dialogue: 0,{_ass_t(ini)},{_ass_t(min(fin, hasta - desde))},Palabras,,0,0,0,,"
                           + " ".join(partes))
+    if not vertical:  # marcador fijo (hud=) arriba a la izquierda
+        t0, actual, desde_hud = 0.0, "", 0.0
+        tramos = []
+        for e in escenas:
+            nuevo = e.get("visual", {}).get("hud", "")
+            if nuevo and nuevo != actual:
+                if actual:
+                    tramos.append((actual, desde_hud, t0))
+                actual, desde_hud = nuevo, t0
+            t0 += e["duracion"]
+        if actual:
+            tramos.append((actual, desde_hud, t0))
+        for txt, a, b in tramos:
+            a2, b2 = max(a, desde) - desde, min(b, hasta) - desde
+            if b2 > a2:
+                lineas.append(f"Dialogue: 2,{_ass_t(a2)},{_ass_t(b2)},Hud,,0,0,0,,"
+                              r"{\fscx40\fscy40\t(0,220,\fscx100\fscy100)}" + _ass_texto(txt.upper()))
     for texto, ini, fin, estilo in extras:
         lineas.append(f"Dialogue: 1,{_ass_t(ini)},{_ass_t(fin)},{estilo},,0,0,0,,{_ass_texto(texto)}")
     ruta.write_text("\n".join(lineas) + "\n", encoding="utf-8")

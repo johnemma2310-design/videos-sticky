@@ -6,7 +6,7 @@ el Short 1 es el comienzo (el gancho) y el Short 2 empieza en el primer clip de 
 segunda mitad (o en la mitad del video).
 """
 from .comun import DIR_SHORTS, SALIDA, TRABAJO, PipelineError
-from . import subtitulos as subs
+from . import outro, subtitulos as subs
 
 ANCHO_V, ALTO_V = 1080, 1920
 COMPOSICION = ("split[a][b];"
@@ -16,8 +16,8 @@ COMPOSICION = ("split[a][b];"
                "[fondo][frente]overlay=0:520,")
 
 
-def _tramos(escenas, cfg):
-    fps, maximo = cfg["video"]["fps"], cfg["shorts"]["max_s"]
+def _tramos(escenas, cfg, reservado=0.0):
+    fps, maximo = cfg["video"]["fps"], cfg["shorts"]["max_s"] - reservado
     inicios, t = [], 0.0
     for e in escenas:
         inicios.append(t)
@@ -54,7 +54,8 @@ def generar(datos, cfg, video_mudo, audio, log=print) -> list:
     escenas = datos["escenas"]
     nombre = datos["titulo"].split(":")[0].strip()
     hechos = []
-    for n, desde, hasta, titulo in _tramos(escenas, cfg):
+    reservado = outro.generar(cfg, vertical=True)[1] if cfg.get("outro", {}).get("activo", True) else 0.0
+    for n, desde, hasta, titulo in _tramos(escenas, cfg, reservado):
         dur = hasta - desde
         if dur < 15:
             raise PipelineError(f"El Short {n} dura solo {dur:.1f}s; revisa las marcas short= del guion.")
@@ -65,6 +66,7 @@ def generar(datos, cfg, video_mudo, audio, log=print) -> list:
         DIR_SHORTS.mkdir(parents=True, exist_ok=True)
         salida = DIR_SHORTS / f"short_{n}.mp4"
         exportar(cfg, video_mudo, audio, desde, dur, ass, salida, f"Short {n}", filtro_previo=COMPOSICION)
-        log(f"  shorts/short_{n}.mp4: {dur:.1f}s (desde {desde:.1f}s)")
+        dur += outro.agregar(cfg, salida, vertical=True)
+        log(f"  shorts/short_{n}.mp4: {dur:.1f}s (desde {desde:.1f}s, con cierre)")
         hechos.append({"archivo": salida.relative_to(SALIDA).as_posix(), "desde": round(desde, 2), "duracion": round(dur, 2)})
     return hechos

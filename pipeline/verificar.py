@@ -59,8 +59,8 @@ def generar(cfg: dict, prueba: bool = False, log=print) -> bool:
         check(bool(vs) and vs[0]["width"] == 1920 and vs[0]["height"] == 1080, "Video en 1080p",
               f"{vs[0]['width']}x{vs[0]['height']} {vs[0]['codec_name']}" if vs else "sin pista de video")
         check(bool(aus), "Tiene pista de audio", aus[0]["codec_name"] if aus else "sin audio")
-        esperado = datos.get("duracion_total", 0)
-        check(abs(dur_video - esperado) < 0.5, "Duración del video = suma de escenas",
+        esperado = datos.get("duracion_total", 0) + datos.get("outro_s", 0)
+        check(abs(dur_video - esperado) < 0.5, "Duración del video = escenas + cierre",
               f"video {dur_video:.2f}s vs escenas {esperado:.2f}s")
         r = ejecutar(["ffmpeg", "-v", "info", "-i", str(video), "-map", "0:a", "-af", "volumedetect",
                       "-f", "null", "-"], "Medición de volumen")

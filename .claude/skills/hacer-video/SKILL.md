@@ -30,6 +30,9 @@ Detente y explica solo si algo falla.
   - Usa `texto=` con palabras clave en ~1 de cada 6 imágenes.
   - Usa `tarjeta=si` en las explicaciones (listas, mapas, conceptos).
   - Sticky debe aparecer en ~1 de cada 6 imágenes.
+- Modo mixto (el que más le gustó al usuario): ~1 de cada 6 escenas con `anim=sticky|accion` (sobre imágenes sin Sticky),
+  1-3 tarjetas `anim=velocidad|...` o similares con datos, y `hud=` si la historia tiene un contador (días, hora, velocidad).
+- No dibujes personajes ni emblemas de otras marcas; solo nómbralos.
 - Exactamente **3 `clip=`** (~27 puntos de Flow) en los momentos de más acción.
 - **2 Shorts**: `short=1|Título` y `short=2|Título` en la frase donde empieza cada uno, y `short=fin` donde termina. Cada uno dura máx. 58 s (~12-14 frases) y debe entenderse solo. Lo ideal: el gancho y el relato dramatizado.
 - No describas en `imagen` a una "mujer joven bonita/seductora" ni armas en uso: Flow los rechaza.

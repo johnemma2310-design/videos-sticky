@@ -5,6 +5,9 @@ videos/**/*.wav
 videos/.actual
 musica/*.mp3
 
+# Cierres de suscripción (se regeneran solos)
+recursos/
+
 # Python
 __pycache__/
 *.pyc

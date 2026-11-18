@@ -132,7 +132,8 @@ def inferir_visual(texto: str, opciones: dict) -> dict:
             "movimiento": movimiento, "rotulo": rotulo[:28], "descripcion": descripcion,
             "imagen": opciones.get("imagen", ""), "texto": opciones.get("texto", ""),
             "clip": opciones.get("clip", ""), "short": opciones.get("short", ""),
-            "tarjeta": si(opciones.get("tarjeta", "no"))}
+            "tarjeta": si(opciones.get("tarjeta", "no")),
+            "anim": opciones.get("anim", ""), "hud": opciones.get("hud", "")}
 
 
 LUGAR = {

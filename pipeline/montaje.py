@@ -14,7 +14,7 @@ from pathlib import Path
 from .comun import (ALTO, ANCHO, DIR_AUDIO, DIR_CLIPS, DIR_FLOW, RAIZ, SALIDA, TRABAJO, PipelineError,
                     cargar_escenas, duracion_media, ejecutar, guardar_escenas)
 from .dibujo import (acabado, dibujar_criatura, dibujar_personaje, fondo, pose_corriendo)
-from . import shorts, subtitulos as subs
+from . import capas, outro, shorts, subtitulos as subs
 
 
 def _codec(cfg):
@@ -179,13 +179,18 @@ def generar(cfg: dict, log=print) -> dict:
         animada = e["visual"]["movimiento"] and e.get("fuente_imagen") != "flow"
         ruta_clip = DIR_FLOW / f"clip_{e['id']:03d}.mp4"
         e["clip_flow"] = ruta_clip.exists() and "imagen_de" not in e
-        if e["clip_flow"]:
+        anim = e["visual"].get("anim", "")
+        if anim.startswith("velocidad"):
+            capas.clip_velocidad(e, cfg, destino, anim)
+        elif e["clip_flow"]:
             clip_video(e, cfg, pngs, paginas, destino, ruta_clip)
         elif animada:
             clip_animado(e, cfg, pngs, paginas, destino)
         else:
             clip_estatico(e, cfg, pngs, paginas, destino)
-        marca = "(clip de Flow)" if e["clip_flow"] else "(animado)" if animada else ""
+        if anim.startswith("sticky"):
+            capas.aplicar_sticky(e, cfg, destino, (anim.split("|") + ["explica"])[1].strip() or "explica")
+        marca = ("(clip de Flow)" if e["clip_flow"] else "(animado)" if animada else "") + (f" [{anim.split('|')[0]}]" if anim else "")
         log(f"  clip {e['id']:03d}: {e['duracion']:5.2f}s {marca}")
         lista_clips.append(f"file '{destino.as_posix()}'")
     guardar_escenas(datos)
@@ -207,6 +212,9 @@ def generar(cfg: dict, log=print) -> dict:
     exportar(cfg, video_mudo, mezcla, 0.0, total, "subtitulos.ass", salida, "Exportación final de video.mp4")
 
     subs.escribir_srt(escenas, SALIDA / "video.srt")
+    datos["outro_s"] = outro.agregar(cfg, salida, vertical=False)
+    if datos["outro_s"]:
+        log(f"  cierre de suscripción: +{datos['outro_s']:.1f}s")
     datos["duracion_total"] = round(total, 2)
     datos["duracion_video"] = round(duracion_media(salida), 2)
     datos["shorts"] = shorts.generar(datos, cfg, video_mudo, mezcla, log)

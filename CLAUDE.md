@@ -15,6 +15,10 @@ Cada historia = **3 videos**: el largo + 2 Shorts verticales. **3 clips de Flow 
 
 Cada video vive en `videos/<nombre>/`: `guion.md`, `trabajo/` (audios, imágenes, `flow/`),
 `video.mp4`, `shorts/` (con `short_1.mp4` y `short_2.mp4`), `video.srt` (subtítulos para subir a YouTube) y `reporte.md`.
+Al final de cada video y Short se pega solo un **cierre animado** (Sticky dice "suscríbete", clic en el botón y
+campanita): `pipeline/outro.py`, textos en `config.json` → `outro`, se guarda en `recursos/`.
+Sticky animado por código (vectorial, cairo): `pipeline/animacion.py` (muñeco, caras, poses);
+prueba de 30 s en `prueba_animada.py` → `videos/prueba-animada/video.mp4`.
 Los videos llevan subtítulos palabra por palabra quemados, whoosh en cada cambio de imagen y un
 segundo encuadre (punch-in) en las escenas largas; la voz va a +8% y sin silencios entre frases.
 
@@ -28,6 +32,12 @@ segundo encuadre (punch-in) en las escenas largas; la voz va a +8% y sin silenci
   sencillo sobre fondo blanco. Separar opciones con `;` (no usar `;` dentro de la descripción).
 - `clip=movimiento` anima esa imagen en Flow (3 por video). `short=1|Título` / `short=2|Título` donde
   empieza cada Short y `short=fin` donde termina (máx. 58 s cada uno).
+- **Modo mixto** (capas animadas por código, `pipeline/capas.py`): `anim=sticky|explica|sorpresa|miedo|feliz|correr`
+  pone a Sticky animado (habla con la voz) encima de la ilustración (usar imágenes SIN Sticky en esas escenas);
+  `anim=velocidad|Título|Nombre:valor|...` tarjeta a pantalla completa con barras que crecen (km/h, escala log);
+  `hud=TEXTO` marcador fijo arriba a la izquierda (ej. `hud=DÍA 3 · 60 KM/H`).
+- Nunca dibujar personajes de otras marcas (Sonic, Flash, etc.): se nombran y comparan, pero no se dibujan ni sus
+  emblemas (riesgo de reclamos de derechos en YouTube).
 - Flow rechaza a veces prompts de "mujer joven bonita/seductora", armas o caras de furia: describir
   sin esos elementos (ej. "muchacha campesina con vestido blanco", tormenta en vez de machete).
 
