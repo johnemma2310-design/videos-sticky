@@ -81,8 +81,8 @@
     "posicion_x": 640
   },
   "flow": {
-    "estilo": "Ilustración de caricatura dibujada a mano para un video educativo, contornos negros gruesos, colores vivos y cálidos, sombreado suave, fondo detallado, personajes con ojos grandes y expresivos, apto para niños, sin sangre, formato horizontal 16:9.",
-    "estilo_tarjeta": "Ilustración sencilla de caricatura dibujada a mano sobre fondo blanco liso, contornos negros gruesos, colores vivos, el dibujo ocupa la parte inferior y derecha y deja vacía la esquina superior izquierda, apto para niños, formato horizontal 16:9.",
+    "estilo": "Ilustración dibujada a mano para un video educativo, contornos negros gruesos, colores vivos, fondo detallado. TODAS las personas son personajes de palitos (stickman): cabeza redonda blanca, cuerpo y extremidades de líneas negras, ojos simples, sin nariz, sin mejillas, sin rubor, sin pestañas; se distinguen solo por ropa o accesorios sencillos (sombrero, casco, gafas, cabello). Los animales, los planetas, el Sol, la Luna y los objetos NO tienen caras. Estilo cómic sencillo, nada tierno ni infantil, apto para todo público, sin sangre, formato horizontal 16:9.",
+    "estilo_tarjeta": "Ilustración sencilla dibujada a mano sobre fondo blanco liso, contornos negros gruesos, colores vivos, el dibujo ocupa la parte inferior y derecha y deja vacía la esquina superior izquierda. TODAS las personas son personajes de palitos (stickman): cabeza redonda blanca, cuerpo y extremidades de líneas negras, ojos simples, sin nariz, sin mejillas, sin rubor, sin pestañas; se distinguen solo por ropa o accesorios sencillos (sombrero, casco, gafas, cabello). Los animales, los planetas, el Sol, la Luna y los objetos NO tienen caras. Estilo cómic sencillo, nada tierno ni infantil, apto para todo público, sin sangre, formato horizontal 16:9.",
     "personaje": "un personaje de palitos con cabeza redonda blanca y grande, ojos grandes y expresivos, cuerpo y extremidades de líneas blancas con contorno negro, y una bufanda azul brillante alrededor del cuello (la bufanda siempre es azul, nunca de otro color)",
     "sin_texto": "Sin texto, sin letras, sin números, sin subtítulos, sin marcas de agua.",
     "estilo_clip": "Cámara quieta. Mantener exactamente el mismo estilo de ilustración de caricatura dibujada a mano y los mismos colores. Sin texto.",
@@ -119,7 +119,7 @@
     "texto_short": "¡Suscríbete y activa la campanita para ver la historia completa!"
   },
   "presentador": {
-    "activo": true,
+    "activo": false,
     "cada_pantalla_completa": 5,
     "fondo": [
       [

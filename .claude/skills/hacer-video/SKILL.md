@@ -29,8 +29,7 @@ Detente y explica solo si algo falla.
 - Pon `[[imagen=...]]` cada 1-2 frases; las demás siguen el plano anterior.
   - Usa `texto=` con palabras clave en ~1 de cada 6 imágenes.
   - Usa `tarjeta=si` en las explicaciones (listas, mapas, conceptos).
-  - Sticky debe aparecer en ~1 de cada 6 imágenes.
-- Modo presentador (automático, `config.json` → `presentador`): en ~80% de las escenas Sticky animado explica de pie y la ilustración de Flow va en un recuadro; 1 de cada 5 imágenes va a pantalla completa. Por eso las imágenes de Flow NO deben incluir a Sticky (salvo en miniaturas).
+- **Sticky va DENTRO de ~80% de las imágenes**: escribe `{Sticky}` haciendo algo en la escena (corre, señala, se sorprende, flota en el espacio). Todas las personas son stickman (la regla ya está en `flow.estilo`); no pidas caras en planetas, animales ni objetos. El modo presentador está apagado (no le gustó al usuario).
 - Si agregas frases al guion después de generar imágenes, la numeración de escenas cambia: reasigna las imágenes de `trabajo/flow/` por su prompt antes de montar (si no, quedan corridas).
 - Modo mixto (el que más le gustó al usuario): ~1 de cada 6 escenas con `anim=sticky|accion` (sobre imágenes sin Sticky),
   1-3 tarjetas `anim=velocidad|...` o similares con datos, y `hud=` si la historia tiene un contador (días, hora, velocidad).

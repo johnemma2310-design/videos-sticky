@@ -32,7 +32,10 @@ segundo encuadre (punch-in) en las escenas largas; la voz va a +8% y sin silenci
   sencillo sobre fondo blanco. Separar opciones con `;` (no usar `;` dentro de la descripción).
 - `clip=movimiento` anima esa imagen en Flow (3 por video). `short=1|Título` / `short=2|Título` donde
   empieza cada Short y `short=fin` donde termina (máx. 58 s cada uno).
-- **Modo presentador** (`config.json` → `presentador`, por defecto activo): en ~80% de las escenas Sticky animado
+- **Estilo de imágenes (pedido del usuario):** Sticky DENTRO de ~80% de las ilustraciones (`{Sticky}` en el `imagen=`),
+  y TODAS las personas como stickman (cabeza redonda, cuerpo de líneas, sin nariz/mejillas/rubor); planetas, Sol,
+  animales y objetos sin caras; nada tierno. La regla va en `config.json` → `flow.estilo`.
+- **Modo presentador** (`config.json` → `presentador`, APAGADO: al usuario no le gustó el recuadro tipo diapositiva): en ~80% de las escenas Sticky animado
   explica de pie (habla con la voz, gestos, caras según la frase) y la ilustración de Flow va en un recuadro sobre fondo
   plano; 1 de cada 5 imágenes, los clips y las tarjetas van a pantalla completa. Videos de **10-15 min** (2.300-2.800 palabras).
 - **Modo mixto** (capas animadas por código, `pipeline/capas.py`): `anim=sticky|explica|sorpresa|miedo|feliz|correr`

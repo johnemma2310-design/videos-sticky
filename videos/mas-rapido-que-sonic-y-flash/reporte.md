@@ -1,13 +1,13 @@
 # Reporte: ¿Y si cada día corrieras el doble de rápido? Más rápido que Sonic y Flash
 
-- Generado: 2026-11-18T17:04:59
+- Generado: 2026-11-18T17:57:55
 - Guion: `videos/mas-rapido-que-sonic-y-flash/guion.md`
 - Voz: `es-CO-GonzaloNeural` (+8%)
 - Escenas: 174 (17 con animación)
 - Duración estimada: 15:14.10 · real: **10:23.83**
 - Escenas con imagen de Flow: 174 de 174 (63 ilustraciones distintas; el resto, dibujo de respaldo)
 - Shorts: shorts/short_1.mp4, shorts/short_2.mp4
-- Clips de video de Flow: 3 (de 3 pedidos en el guion)
+- Clips de video de Flow: 2 (de 3 pedidos en el guion)
 - Música de fondo: no (no existe musica/fondo.mp3)
 - Resultado: **OK**
 
