@@ -10,8 +10,11 @@ Todo listo para copiar y pegar en YouTube Studio. Los textos van en bloques para
 
 ### Título
 ```
-¿Qué Salta en la Selva de Noche? La Leyenda de la Patasola
+NUNCA Sigas a Esta MUJER en la Selva… 😱 La Leyenda de la PATASOLA
 ```
+Otras opciones:
+- `¿Qué SALTA en la Selva de NOCHE? 😱 La Leyenda de la PATASOLA`
+- `Si Escuchas ESTOS Golpes en el Monte… CORRE 😨 (La Patasola)`
 
 ### Descripción
 ```
@@ -71,7 +74,7 @@ Y cuéntame: ¿qué leyenda quieres que Sticky investigue en el próximo video? 
 
 ### Título
 ```
-¿Qué Salta en la Selva de Noche? 😱 #Shorts
+Su PERRO Escuchó ALGO en la Selva… 😱 #Shorts
 ```
 
 ### Descripción
@@ -103,7 +106,7 @@ la patasola, leyenda de la patasola, leyendas colombianas, historias de miedo, l
 
 ### Título
 ```
-La Mula Que Le Salvó la Vida 🫏 #Shorts
+Su MULA Vio Algo Que ÉL NO… 😨 #Shorts
 ```
 
 ### Descripción

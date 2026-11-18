@@ -44,13 +44,13 @@ Detente y explica solo si algo falla.
 6. Revisar fotogramas del video y de los Shorts.
 7. Miniatura minimalista: 2-4 prompts en Flow (fondo liso, Sticky + un solo elemento del tema, mucho espacio vacío, sin texto), y luego título corto (2-3 palabras) con Pillow en Arial Black → `miniatura_minimal_N.jpg` (1280x720).
 8. `descripcion.txt` con el formato de siempre: párrafo gancho, "En este video verás…", párrafo de preguntas, CAPÍTULOS (desde los `#` del guion y los tiempos de `reporte.md`), "FUENTES BIBLIOGRÁFICAS:" solo con fuentes verificadas y 5 hashtags.
-9. `publicacion.md` (modelo: `videos/la-patasola/publicacion.md`) para el video largo y para CADA Short: título (≤60 caracteres, pregunta + frase exacta que la gente busca; Shorts con `#Shorts`), descripción, hashtags (los 3 primeros se ven sobre el título), etiquetas, comentario fijado (pregunta que invite a responder + pedir la próxima leyenda) y ajustes (público, categoría, "video relacionado" de los Shorts = video largo). Si vidIQ está conectado, usa `vidiq_keyword_research` para elegir las palabras clave.
+9. `publicacion.md` (modelo: `videos/la-patasola/publicacion.md`) para el video largo y para CADA Short: título que ENGANCHE (≤70 caracteres, 2-4 palabras clave en MAYÚSCULAS, curiosidad o advertencia que obligue a hacer clic, 1 emoji, puntos suspensivos si deja algo en el aire; incluye el nombre de la leyenda; da 3 opciones y marca la mejor; Shorts con `#Shorts` y un título distinto que cuente el giro, ej. `Su MULA Vio Algo Que ÉL NO… 😨 #Shorts`), descripción, hashtags (los 3 primeros se ven sobre el título), etiquetas, comentario fijado (pregunta que invite a responder + pedir la próxima leyenda) y ajustes (público, categoría, "video relacionado" de los Shorts = video largo). Si vidIQ está conectado, usa `vidiq_keyword_research` para elegir las palabras clave.
 
 ## 3. Entrega
 
 Dile al usuario, en pocas líneas:
 - Dónde quedaron `video.mp4`, `short_1.mp4`, `short_2.mp4`, `video.srt`, las miniaturas y `publicacion.md`.
-- El título, la descripción, las etiquetas y el comentario fijado del video largo pegados en el chat, listos para copiar.
+- El título, la descripción COMPLETA, las etiquetas y el comentario fijado del video largo pegados en el chat en bloques de código, listos para copiar; y los títulos de los Shorts.
 - La duración.
 - Los puntos de Flow gastados.
 - Cualquier problema.
