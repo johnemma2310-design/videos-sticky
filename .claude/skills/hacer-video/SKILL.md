@@ -29,6 +29,10 @@ Detente y explica solo si algo falla.
 - Pon `[[imagen=...]]` cada 1-2 frases; las demás siguen el plano anterior.
   - Usa `texto=` con palabras clave en ~1 de cada 6 imágenes.
   - Usa `tarjeta=si` en las explicaciones (listas, mapas, conceptos).
+- **Animaciones vectoriales SIEMPRE** (el usuario las pidió expresamente): en cada video incluye, además de las imágenes de Flow,
+  al menos 3-5 tarjetas animadas por código (`anim=velocidad|...` u otras de datos), un `hud=` si hay contador, y 4-6 escenas
+  de Sticky animado por código (`anim=sticky|accion`) sobre imágenes SIN Sticky (para no duplicarlo). El cierre animado de
+  suscripción va solo. Si hace falta una animación nueva (ej. otra gráfica), prográmala en `pipeline/capas.py`.
 - **Sticky va DENTRO de ~80% de las imágenes**: escribe `{Sticky}` haciendo algo en la escena (corre, señala, se sorprende, flota en el espacio). Todas las personas son stickman (la regla ya está en `flow.estilo`); no pidas caras en planetas, animales ni objetos. El modo presentador está apagado (no le gustó al usuario).
 - Si agregas frases al guion después de generar imágenes, la numeración de escenas cambia: reasigna las imágenes de `trabajo/flow/` por su prompt antes de montar (si no, quedan corridas).
 - Modo mixto (el que más le gustó al usuario): ~1 de cada 6 escenas con `anim=sticky|accion` (sobre imágenes sin Sticky),
