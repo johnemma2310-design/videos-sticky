@@ -12,7 +12,7 @@ Detente y explica solo si algo falla.
 
 - `<nombre>`: en minúsculas, con guiones (ej. `la-llorona`).
 - Si el usuario solo da un tema, investiga con WebSearch: usa 2-3 fuentes y no inventes datos. Cuando las versiones de una leyenda no coinciden, di "según algunas versiones".
-- Tamaño: unas 1.700-2.000 palabras. Con la voz acelerada eso da 10-12 minutos.
+- Tamaño: **2.300-2.800 palabras** (la voz va a ~210 palabras/min). El video DEBE durar entre 10 y 15 minutos: después de `--hasta voz`, si `duracion_total` < 10 min, alarga el guion antes de pedir imágenes.
 - Una frase = una escena de ~4-6 s. Usa frases cortas y fáciles de narrar.
 - Estructura, como en `videos/la-patasola/guion.md`:
   1. Gancho de miedo o misterio.
@@ -30,6 +30,8 @@ Detente y explica solo si algo falla.
   - Usa `texto=` con palabras clave en ~1 de cada 6 imágenes.
   - Usa `tarjeta=si` en las explicaciones (listas, mapas, conceptos).
   - Sticky debe aparecer en ~1 de cada 6 imágenes.
+- Modo presentador (automático, `config.json` → `presentador`): en ~80% de las escenas Sticky animado explica de pie y la ilustración de Flow va en un recuadro; 1 de cada 5 imágenes va a pantalla completa. Por eso las imágenes de Flow NO deben incluir a Sticky (salvo en miniaturas).
+- Si agregas frases al guion después de generar imágenes, la numeración de escenas cambia: reasigna las imágenes de `trabajo/flow/` por su prompt antes de montar (si no, quedan corridas).
 - Modo mixto (el que más le gustó al usuario): ~1 de cada 6 escenas con `anim=sticky|accion` (sobre imágenes sin Sticky),
   1-3 tarjetas `anim=velocidad|...` o similares con datos, y `hud=` si la historia tiene un contador (días, hora, velocidad).
 - No dibujes personajes ni emblemas de otras marcas; solo nómbralos.

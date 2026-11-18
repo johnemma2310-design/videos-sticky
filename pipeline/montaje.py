@@ -170,6 +170,9 @@ def generar(cfg: dict, log=print) -> dict:
 
     lista_clips = []
     quemar = cfg["subtitulos"].get("quemar", True)
+    cp = cfg.get("presentador", {})
+    cada = cp.get("cada_pantalla_completa", 5)
+    n_img, lado = -1, "izq"
     for e in escenas:
         e["subtitulos"] = subs.paginas(e, cfg)  # siempre: alimentan el .srt
         paginas = e["subtitulos"] if quemar else []
@@ -180,17 +183,27 @@ def generar(cfg: dict, log=print) -> dict:
         ruta_clip = DIR_FLOW / f"clip_{e['id']:03d}.mp4"
         e["clip_flow"] = ruta_clip.exists() and "imagen_de" not in e
         anim = e["visual"].get("anim", "")
+        nueva = "imagen_de" not in e
+        if nueva:
+            n_img += 1
+            if n_img % 4 == 0 and n_img:
+                lado = "der" if lado == "izq" else "izq"
+        presenta = (cp.get("activo", False) and not e["clip_flow"] and not anim.startswith("velocidad")
+                    and e.get("fuente_imagen") == "flow" and n_img % cada != cada - 1)
+        e["presentador"] = presenta
         if anim.startswith("velocidad"):
             capas.clip_velocidad(e, cfg, destino, anim)
+        elif presenta:
+            capas.clip_presentador(e, cfg, destino, RAIZ / e["imagen"], lado, nueva)
         elif e["clip_flow"]:
             clip_video(e, cfg, pngs, paginas, destino, ruta_clip)
         elif animada:
             clip_animado(e, cfg, pngs, paginas, destino)
         else:
             clip_estatico(e, cfg, pngs, paginas, destino)
-        if anim.startswith("sticky"):
+        if anim.startswith("sticky") and not presenta:
             capas.aplicar_sticky(e, cfg, destino, (anim.split("|") + ["explica"])[1].strip() or "explica")
-        marca = ("(clip de Flow)" if e["clip_flow"] else "(animado)" if animada else "") + (f" [{anim.split('|')[0]}]" if anim else "")
+        marca = ("(clip de Flow)" if e["clip_flow"] else "(animado)" if animada else "") + (f" [{anim.split('|')[0]}]" if anim else "") + (" [presentador]" if presenta else "")
         log(f"  clip {e['id']:03d}: {e['duracion']:5.2f}s {marca}")
         lista_clips.append(f"file '{destino.as_posix()}'")
     guardar_escenas(datos)

@@ -226,3 +226,142 @@ def clip_velocidad(e, cfg, destino, spec):
            "-framerate", str(fps), "-i", "-", "-frames:v", str(n)] + _codec(cfg) + [str(destino)]
     _render(cmd, n, lambda ctx, i: _tarjeta(ctx, e, i / fps, dur, titulo, barras),
             f"Tarjeta de velocidades de la escena {e['id']}")
+
+# ---------------------------------------------------------------- modo presentador (Sticky explica + recuadro)
+
+_CACHE_IMG = {}
+
+
+def _superficie(ruta):
+    """JPG/PNG -> superficie cairo (se guarda en caché por ruta)."""
+    if ruta in _CACHE_IMG:
+        return _CACHE_IMG[ruta]
+    import numpy as np
+    from PIL import Image
+    im = Image.open(ruta).convert("RGB")
+    g = np.asarray(im.convert("L"))
+    if g.mean() > 215:  # tarjeta de fondo blanco: acercar al dibujo para que no sobre blanco
+        ys, xs = np.where(g < 235)
+        if len(xs) > 500:
+            x0, x1, y0, y1 = np.percentile(xs, 1), np.percentile(xs, 99), np.percentile(ys, 1), np.percentile(ys, 99)
+            cx, cy = (x0 + x1) / 2, (y0 + y1) / 2
+            w = max(x1 - x0, (y1 - y0) * 16 / 9) * 1.18
+            w = min(max(w, im.width * 0.45), im.width)
+            h = w * 9 / 16
+            cx = min(max(cx, w / 2), im.width - w / 2)
+            cy = min(max(cy, h / 2), im.height - h / 2)
+            im = im.crop((int(cx - w / 2), int(cy - h / 2), int(cx + w / 2), int(cy + h / 2)))
+    im = im.resize((ANCHO, ALTO), Image.LANCZOS)
+    a = np.asarray(im)
+    bgra = np.empty((ALTO, ANCHO, 4), dtype=np.uint8)
+    bgra[..., 0], bgra[..., 1], bgra[..., 2], bgra[..., 3] = a[..., 2], a[..., 1], a[..., 0], 255
+    sup = cairo.ImageSurface.create_for_data(bytearray(bgra.tobytes()), cairo.FORMAT_ARGB32, ANCHO, ALTO, ANCHO * 4)
+    _CACHE_IMG.clear()  # solo una imagen a la vez en memoria
+    _CACHE_IMG[ruta] = sup
+    return sup
+
+
+def _expresion(texto, t, habla):
+    """Cara de Sticky según la frase: pregunta, exclamación, peligro o explicación normal."""
+    tl = texto.lower()
+    boca = ("big" if int(t * 11) % 2 == 0 else "o") if habla else "smile"
+    cara = dict(boca=boca, parpadeo=parpadeo(t, 2.8), mira=(0.7, -0.2))
+    if any(p in tl for p in ("cuidado", "peligro", "miedo", "imposible", "problema", "desmay", "humo", "calor")):
+        cara.update(cejas="worried", ojos="wide", sudor="humo" in tl or "calor" in tl)
+        if not habla:
+            cara["boca"] = "wavy"
+    elif "!" in texto:
+        cara.update(ojos="wide", cejas="up")
+        if not habla:
+            cara["boca"] = "big"
+    elif "?" in texto:
+        cara.update(cejas="up", mira=(0.5, -0.6))
+    return cara
+
+
+def _presentador(ctx, e, t, dur, img, lado, nueva, cfg):
+    cp = cfg.get("presentador", {})
+    c1, c2 = cp.get("fondo", [[0.05, 0.12, 0.30], [0.10, 0.32, 0.62]])
+    g = cairo.LinearGradient(0, 0, ANCHO, ALTO)
+    g.add_color_stop_rgb(0, *c1)
+    g.add_color_stop_rgb(1, *c2)
+    ctx.set_source(g)
+    ctx.paint()
+    ctx.set_source_rgba(1, 1, 1, 0.05)  # puntitos de fondo
+    for y in range(30, ALTO, 60):
+        for x in range(30 + (y // 60 % 2) * 30, ANCHO, 60):
+            ctx.arc(x, y, 3, 0, 2 * math.pi)
+            ctx.fill()
+    # recuadro con la ilustración
+    fw, fh = 1180, 664
+    fx = 640 if lado == "izq" else 100
+    fy = 180
+    pop = rebote(prog(t, 0, 0.3)) if nueva else 1.0
+    ctx.save()
+    ctx.translate(fx + fw / 2, fy + fh / 2)
+    ctx.scale(pop, pop)
+    ctx.translate(-fw / 2, -fh / 2)
+    redondeado(ctx, 10, 16, fw, fh, 34)  # sombra
+    ctx.set_source_rgba(0, 0, 0, 0.35)
+    ctx.fill()
+    redondeado(ctx, -10, -10, fw + 20, fh + 20, 40)
+    ctx.set_source_rgb(1, 1, 1)
+    ctx.fill()
+    ctx.save()
+    redondeado(ctx, 0, 0, fw, fh, 30)
+    ctx.clip()
+    zoom = 1.0 + 0.08 * (t / max(dur, 0.1))
+    esc = fw / ANCHO * zoom
+    ctx.translate(fw / 2, fh / 2)
+    ctx.scale(esc, esc)
+    ctx.translate(-ANCHO / 2, -ALTO / 2)
+    ctx.set_source_surface(img, 0, 0)
+    ctx.get_source().set_filter(cairo.FILTER_GOOD)
+    ctx.paint()
+    ctx.restore()
+    ctx.restore()
+    # palabra clave escrita a mano encima del recuadro
+    clave = e["visual"].get("texto", "")
+    if clave:
+        a = rebote(prog(t, 0.15, 0.45))
+        texto(ctx, clave, fx + fw / 2, 100, 74, AMARILLO, fuente="Segoe Print", borde=6, escala=a, giro=-3)
+    # Sticky explicando
+    s = 1.3
+    sx = 330 if lado == "izq" else ANCHO - 330
+    suelo = ALTO - 40
+    hip = suelo - 154 * s
+    habla = _hablando(e, t)
+    accion = (e["visual"].get("anim", "").split("|") + [""])[1].strip() if e["visual"].get("anim", "").startswith("sticky") else ""
+    d = 1 if lado == "izq" else -1  # hacia dónde está el recuadro
+    gesto = math.sin(t * 2.4 + e["id"])
+    cara = _expresion(e["texto"], t, habla)
+    cara["mira"] = (cara["mira"][0] * d, cara["mira"][1])
+    if accion == "sorpresa":
+        pose = dict(aL1=-60, aL2=-40, aR1=60, aR2=40)
+        cara.update(ojos="wide", cejas="up")
+    elif accion == "miedo":
+        sx += math.sin(t * 55) * 3
+        pose = dict(aL1=-35, aL2=-110, aR1=35, aR2=110)
+        cara.update(ojos="wide", cejas="worried", sudor=True)
+    elif accion == "feliz":
+        ola = math.sin(t * 9)
+        pose = dict(aR1=(95 + ola * 8) * d, aR2=(55 + ola * 12) * d) if d > 0 else dict(aL1=-(95 + ola * 8), aL2=-(55 + ola * 12))
+        cara.update(ojos="happy", rubor=True)
+    elif e["id"] % 3 == 0:  # señala el recuadro
+        pose = dict(aR1=95, aR2=-10 + gesto * 6) if d > 0 else dict(aL1=-95, aL2=10 - gesto * 6)
+    else:  # explica con las manos
+        pose = dict(aR1=70 + gesto * 18, aR2=-35 + gesto * 10, aL1=-25 - gesto * 8, aL2=-20) if d > 0 else \
+            dict(aL1=-(70 + gesto * 18), aL2=35 - gesto * 10, aR1=25 + gesto * 8, aR2=20)
+    pose["head"] = gesto * 2.5
+    _sombra(ctx, sx, suelo)
+    sticky(ctx, sx, hip + math.sin(t * 3) * 2, s, pose, cara, t)
+
+
+def clip_presentador(e, cfg, destino, ruta_img, lado="izq", nueva=True):
+    fps, n = cfg["video"]["fps"], e["frames"]
+    dur = n / fps
+    img = _superficie(str(ruta_img))
+    cmd = ["ffmpeg", "-y", "-v", "error", "-f", "rawvideo", "-pix_fmt", "bgra", "-s", f"{ANCHO}x{ALTO}",
+           "-framerate", str(fps), "-i", "-", "-frames:v", str(n)] + _codec(cfg) + [str(destino)]
+    _render(cmd, n, lambda ctx, i: _presentador(ctx, e, i / fps, dur, img, lado, nueva, cfg),
+            f"Escena con Sticky presentador {e['id']}")

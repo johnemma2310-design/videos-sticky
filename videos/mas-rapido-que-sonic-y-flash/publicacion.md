@@ -2,7 +2,7 @@
 
 ---
 
-## 🎬 VIDEO LARGO (`video.mp4`, 6:53)
+## 🎬 VIDEO LARGO (`video.mp4`, 10:24)
 
 **Miniatura:** `miniatura_minimal_1.jpg` ("¿MÁS RÁPIDO QUE FLASH?")
 
@@ -18,21 +18,23 @@ Otras opciones:
 ```
 ¿Qué pasaría si cada día pudieras correr el doble de rápido que el día anterior? Hoy trotas a 15 km/h, mañana a 30, pasado mañana a 60… En solo tres días ya le ganarías a Usain Bolt, en cuatro al guepardo, y en ocho romperías la barrera del sonido, como Sonic. Pero, ¿podrías llegar a correr más rápido que la luz, como Flash en los cómics?
 
-En este video verás qué le pasaría a tu cuerpo a cada velocidad: por qué el aire se siente como una pared, qué es un boom sónico, por qué girar sería más peligroso que correr, cómo le darías la vuelta a la Tierra en una hora y por qué, según la física de Einstein, el tiempo pasaría más despacio para ti. Comparamos tu velocidad con animales, carros de Fórmula 1, aviones, cohetes, la Estación Espacial y la nave más rápida que ha construido la humanidad.
+En este video verás qué le pasaría a tu cuerpo a cada velocidad: por qué el aire se siente como una pared, qué es un boom sónico, por qué girar sería más peligroso que correr, cómo le darías la vuelta a la Tierra en una hora, por qué el aire te empuja cuatro veces más cuando vas el doble de rápido y por qué, según la física de Einstein, el tiempo pasaría más despacio para ti. Comparamos tu velocidad con animales, carros de Fórmula 1, aviones, cohetes, la Estación Espacial y la nave más rápida que ha construido la humanidad.
 
 ¿Quién es más rápido: Sonic o Flash? ¿Se puede correr más rápido que el sonido? ¿Y más rápido que la luz? La respuesta es mucho más sorprendente de lo que parece.
 
 CAPÍTULOS:
 0:00 ¿Y si corrieras el doble cada día?
-0:24 Días 1 a 3: más rápido que Usain Bolt
-1:03 Día 4: más rápido que el guepardo
-1:35 Días 5 a 7: Fórmula 1 y aviones
-2:37 Día 8: la barrera del sonido (como Sonic)
-3:21 Días 9 a 12: más rápido que todo lo que vuela
-4:26 Día 13: ¡te vas al espacio!
-4:48 Días 15 a 27: rumbo a la luz
-5:53 Día 28: ¿más rápido que la luz? (como Flash)
-6:25 ¿Quién gana?
+0:24 La regla del doble: el arroz del rey
+0:50 Días 1 a 3: más rápido que Usain Bolt
+1:39 Día 4: más rápido que el guepardo
+2:31 Días 5 a 7: Fórmula 1 y aviones
+3:43 Día 8: la barrera del sonido (como Sonic)
+4:46 Días 9 a 12: más rápido que todo lo que vuela
+6:09 Día 13: ¡te vas al espacio!
+6:53 Días 15 a 27: rumbo a la luz
+8:30 Día 28: ¿más rápido que la luz? (como Flash)
+9:29 ¿Quién gana?
+9:38 La lección del doble
 
 FUENTES:
 
@@ -70,7 +72,7 @@ Y si pudieras correr el doble cada día, ¿en qué día te detendrías tú? 🏃
 
 ---
 
-## 📱 SHORT 1 (`shorts/short_1.mp4`, 57 s): el gancho, días 1 a 4
+## 📱 SHORT 1 (`shorts/short_1.mp4`, 56 s): el gancho, días 1 a 4
 
 ### Título
 ```
@@ -99,7 +101,7 @@ que pasaria si, correr el doble cada dia, mas rapido que usain bolt, guepardo ve
 
 ---
 
-## 📱 SHORT 2 (`shorts/short_2.mp4`, 49 s): la barrera del sonido
+## 📱 SHORT 2 (`shorts/short_2.mp4`, 52 s): la barrera del sonido
 
 ### Título
 ```

@@ -18,6 +18,15 @@ Hoy trotas a quince kilómetros por hora, como cualquier persona.
 ¿Y a Flash, que en los cómics corre más rápido que la luz?
 [[anim=sticky|feliz]] Hola, soy Sticky, y hoy vamos a averiguarlo, día por día.
 
+## La regla del doble
+
+[[imagen=un tablero de ajedrez de madera con montoncitos de granos de arroz que crecen en cada casilla, los últimos montones son enormes como montañas; tarjeta=no]] Antes de empezar, hay algo que debes saber sobre duplicar.
+Cuenta una leyenda que un sabio le pidió a un rey un grano de arroz en la primera casilla de un tablero de ajedrez, dos en la segunda, cuatro en la tercera, y así, duplicando, hasta la última.
+El rey se rio, porque le pareció un premio muy pequeño.
+[[imagen=un rey de caricatura con corona y cara de asombro frente a una montaña gigantesca de arroz que llega hasta las nubes]] Pero en la última casilla harían falta más granos de arroz de los que la humanidad ha cosechado en toda su historia.
+Así es duplicar: al principio parece poquito, y de repente se vuelve gigantesco.
+[[texto=×2]] Y eso mismo va a pasar con tu velocidad.
+
 ## Día 1, 2 y 3
 
 [[imagen=un parque de una {Ciudad} por la mañana con gente trotando, perros y bicicletas; anim=sticky|explica]] Día uno. Corres a quince kilómetros por hora, el ritmo de alguien que sale a trotar en el parque.
@@ -27,6 +36,8 @@ Nada raro todavía.
 [[anim=velocidad|¿Quién es más rápido?|Trotar:15|Bicicleta:30|Usain Bolt:44.7|Tú (día 3):60]] Y aquí pasa algo increíble: ya eres más rápido que Usain Bolt.
 El hombre más rápido de la historia llegó a unos cuarenta y cuatro kilómetros por hora en su récord mundial de los cien metros.
 Tú, en el día tres, lo pasarías como si estuviera caminando.
+[[imagen=un velocista de caricatura corriendo en una pista roja con las piernas muy estiradas y huellas separadas por una línea de medición en el suelo]] Los mejores velocistas dan zancadas de casi dos metros y medio, y apenas tocan el suelo un instante en cada paso.
+Tú no tendrías zancadas más largas: tus piernas simplemente se moverían mucho más rápido.
 [[imagen=unos tenis deportivos con la suela gastada y humeando sobre el asfalto; tarjeta=si; texto=¡Tenis nuevos!]] Eso sí, vas a necesitar tenis nuevos muy seguido.
 [[imagen=una mesa llena de comida saludable: frutas, arroz, huevos, pan y vasos de jugo, vista desde arriba]] Y también mucha comida, porque correr así gasta muchísima energía.
 [[anim=sticky|feliz]] Por ahora, todo es divertido: llegas al colegio en minutos y nadie te gana en el recreo.
@@ -35,8 +46,12 @@ Tú, en el día tres, lo pasarías como si estuviera caminando.
 
 [[imagen=una sabana africana dorada con acacias y un guepardo corriendo a toda velocidad levantando polvo; hud=DÍA 4 · 120 KM/H; clip=el guepardo corre a toda velocidad por la sabana estirando el cuerpo y levantando polvo con las patas]] Día cuatro. Ciento veinte kilómetros por hora.
 Ahora le ganas al guepardo, el animal terrestre más rápido del mundo, que llega a unos ciento diez.
+[[imagen=un guepardo de caricatura visto de lado con la columna arqueada como un resorte y las patas estiradas en el aire; tarjeta=si; texto=Columna de resorte]] El secreto del guepardo es su columna, que se dobla y se estira como un resorte en cada salto.
+Pero el guepardo solo aguanta esa velocidad unos segundos, en carreras cortas.
+[[anim=sticky|feliz]] Tú, en cambio, podrías correr así todo el día sin cansarte. ¡Esa es tu ventaja!
 [[imagen=primer plano de una cara caricaturesca con los ojos entrecerrados por el viento fuerte y pequeños insectos rebotando como granizo; anim=sticky|miedo]] Pero empiezan los problemas: a esta velocidad, el viento te empuja la cara como si sacaras la cabeza por la ventana de un carro en la autopista.
 Y los mosquitos que te encuentres te pegarán como pequeñas piedritas de granizo.
+Por eso los motociclistas usan casco con visera: a esa velocidad, hasta un insecto pequeño se siente como un golpecito.
 [[imagen=unas gafas de natación y un casco de bicicleta sobre una mesa, dibujados con estilo sencillo; tarjeta=si; texto=Equipo]] Necesitarías gafas y casco, como un ciclista profesional.
 [[short=fin]] Y eso que apenas es el día cuatro.
 
@@ -55,6 +70,9 @@ Cuando vas tan rápido y tomas una curva, tu cuerpo quiere seguir derecho.
 Si tú giraras de golpe a esta velocidad, podrías marearte o hasta desmayarte, porque la sangre se te bajaría de la cabeza.
 [[imagen=una pista de atletismo enorme y ovalada vista desde arriba, con curvas muy abiertas que ocupan varios kilómetros; tarjeta=si; texto=Curvas gigantes]] Por eso, para girar tendrías que hacer curvas larguísimas, de varios kilómetros.
 [[imagen=un avión de pasajeros volando sobre las nubes al atardecer; hud=DÍA 7 · 960 KM/H]] Día siete. Novecientos sesenta kilómetros por hora.
+[[imagen=dos flechas de viento dibujadas, una pequeña y otra cuatro veces más grande, empujando a una silueta sencilla de un corredor; tarjeta=si; texto=Doble velocidad, cuádruple empuje]] Hay algo que hace todo más difícil: cuando vas el doble de rápido, el aire no te empuja el doble.
+¡Te empuja cuatro veces más!
+Por eso cada día que pasa, correr cuesta muchísimo más esfuerzo que el día anterior.
 Vas igual de rápido que un avión de pasajeros, pero con los pies en el suelo.
 [[imagen=una pared invisible de aire dibujada con líneas azules que empujan hacia atrás a una silueta pequeña de un corredor; tarjeta=si; texto=Pared de aire]] A esta velocidad, el aire ya no se siente como viento: se siente como una pared que te empuja.
 [[anim=sticky|miedo]] Respirar sería dificilísimo, y el roce con el aire empezaría a calentarte la ropa.
@@ -65,8 +83,13 @@ Vas igual de rápido que un avión de pasajeros, pero con los pies en el suelo.
 Acabas de romper la barrera del sonido.
 [[anim=velocidad|La barrera del sonido|Avión de pasajeros:900|Sonido:1235|Félix Baumgartner:1357.6|Tú (día 8):1920]] El sonido viaja a unos mil doscientos treinta y cinco kilómetros por hora.
 Y tú vas más rápido que eso.
+[[imagen=un cielo de tormenta de noche sobre un campo con un rayo brillante a lo lejos y una familia mirando desde una ventana]] ¿Alguna vez has visto un rayo y escuchado el trueno unos segundos después?
+Eso pasa porque la luz llega casi al instante, pero el sonido viaja mucho más lento.
+[[imagen=un reloj de arena y un rayo dibujados juntos, con números del uno al tres flotando; tarjeta=si; texto=1, 2, 3…]] Por cada tres segundos que cuentes entre el rayo y el trueno, la tormenta está más o menos a un kilómetro de distancia.
+[[anim=sticky|sorpresa]] Pues ahora tú vas más rápido que ese trueno.
 [[imagen=las ventanas de una casa vibrando con ondas de sonido dibujadas y unas palomas saliendo volando asustadas de un tejado]] Cada vez que pasas cerca de alguien, se oye un estruendo enorme, como un trueno: un boom sónico.
 [[imagen=una persona en un parque mirando hacia un lado con cara de sorpresa mientras una estela de polvo ya se aleja muy lejos por el otro lado]] Lo más raro es que la gente te vería pasar primero, y te escucharía después.
+Primero verían una ráfaga de polvo, y solo un instante después llegaría el ruido, ¡bum!
 [[anim=sticky|sorpresa]] Si gritaras "¡hola!" mientras corres, ¡tu propia voz se quedaría atrás de ti!
 [[imagen=un paracaidista con traje presurizado blanco y casco saltando desde una cápsula en el borde del espacio, con la curva de la Tierra abajo]] En la vida real, muy pocas personas han ido más rápido que el sonido sin estar dentro de un avión.
 En dos mil doce, el paracaidista Félix Baumgartner saltó desde casi cuarenta kilómetros de altura y, en caída libre, llegó a unos mil trescientos cincuenta y siete kilómetros por hora.
@@ -77,6 +100,8 @@ En dos mil doce, el paracaidista Félix Baumgartner saltó desde casi cuarenta k
 
 [[imagen=un avión espía negro y alargado volando muy alto sobre las nubes, con el cielo casi oscuro arriba; hud=DÍA 9 · 3.840 KM/H]] Día nueve. Tres mil ochocientos cuarenta kilómetros por hora.
 Le ganas al SR-71 Blackbird, uno de los aviones más rápidos de la historia, que llegó a unos tres mil quinientos.
+[[imagen=un avión de pasajeros supersónico blanco con la nariz larga y puntiaguda y alas en forma de triángulo, volando sobre el océano al atardecer]] Antes de eso ya habías pasado al Concorde, un avión de pasajeros que volaba a más del doble de la velocidad del sonido.
+Cruzaba de Londres a Nueva York en unas tres horas y media, la mitad que un avión normal.
 [[imagen=un termómetro dibujado al rojo vivo con ondas de calor y vapor saliendo; tarjeta=si; texto=¡Calor!]] A esa velocidad, partes de la superficie de ese avión se calentaban a más de trescientos grados por el roce con el aire.
 [[anim=sticky|miedo]] Sin un traje especial, ¡tu ropa empezaría a echar humo!
 [[imagen=un traje especial plateado y brillante como de astronauta, con casco de vidrio, colgado en una vitrina; tarjeta=si; texto=Traje especial]] Necesitarías un traje como el de los pilotos de pruebas o los astronautas, que aguante el calor.
@@ -90,15 +115,22 @@ Cruzarías Colombia entera, de La Guajira al Amazonas, en unos siete minutos.
 Ahora eres más rápido que la Estación Espacial Internacional, que da vueltas a la Tierra a unos veintisiete mil seiscientos.
 [[imagen={Tierra} con una línea brillante que le da una vuelta completa por el ecuador; clip=una estela de luz azul le da la vuelta completa a la Tierra por el ecuador mientras el planeta gira despacio]] Le darías la vuelta completa al planeta en poco más de una hora.
 [[anim=sticky|feliz]] Podrías desayunar en Colombia, almorzar en Japón y volver a casa para la cena.
+[[imagen=un reloj gigante dibujado sobre un mapa del mundo con un sol y una luna, que muestra que en un lado del planeta es de día y en el otro es de noche; tarjeta=si; texto=Día y noche]] Eso sí, sería un lío con los horarios.
+Cuando en Colombia es mediodía, en Japón ya es de madrugada del día siguiente.
+¡Podrías ver dos amaneceres en una sola mañana!
 
 ## Día 13: ¡te vas al espacio!
 
 [[imagen=una colina suave en el campo con un pequeño salto de tierra, y una estela que sale disparada hacia el cielo estrellado; hud=DÍA 13 · 61.440 KM/H]] Día trece. Sesenta y un mil cuatrocientos cuarenta kilómetros por hora.
 Y aquí pasa algo muy loco.
 [[imagen=un cohete despegando hacia el espacio con una gran nube de humo blanco, visto de lejos; tarjeta=no]] Para escapar de la gravedad de la Tierra, un cohete necesita ir a unos cuarenta mil kilómetros por hora.
+[[imagen=un niño lanzando una pelota hacia arriba en un parque, con flechas punteadas que muestran cómo la pelota sube y vuelve a caer; tarjeta=si; texto=La gravedad]] Piensa en una pelota: si la lanzas hacia arriba, sube un poco y vuelve a caer.
+Si la lanzas más fuerte, sube más alto, pero igual regresa.
+Ahora, si pudieras lanzarla a más de once kilómetros por segundo, la gravedad ya no podría traerla de vuelta. ¡Se iría para siempre!
 [[anim=sticky|sorpresa]] Tú ya vas más rápido que eso.
 [[imagen={Tierra} vista desde el espacio con su curva y una pequeña estela que se aleja hacia las estrellas]] Si corrieras en línea recta, la Tierra se curvaría por debajo de tus pies, y con el primer saltito saldrías disparado al espacio.
 Así que, desde aquí, ya no corres sobre el planeta: corres por el universo.
+[[anim=sticky|feliz]] Y no necesitarías nave espacial, solo tus piernas… y un buen traje para respirar, porque en el espacio no hay aire.
 
 ## Día 20 al 27: rumbo a la luz
 
@@ -113,12 +145,19 @@ La Luna está a trescientos ochenta y cuatro mil kilómetros, y llegarías en un
 [[imagen=el planeta Marte rojo y polvoriento con sus casquetes polares blancos, flotando en el espacio; hud=DÍA 22 · 31 MILLONES KM/H]] Día veintidós. Treinta y un millones de kilómetros por hora.
 Cuando Marte está más cerca de nosotros, llegarías allá en un par de horas.
 A una nave de verdad, ese viaje le toma unos siete meses.
+Imagina hacer en una tarde un viaje que a los astronautas les tomaría más de medio año.
 [[imagen=el Sol enorme y brillante con llamaradas, y los planetas del sistema solar en fila; hud=DÍA 27 · 1.006 MILLONES KM/H]] Día veintisiete. Mil seis millones de kilómetros por hora.
 Ya vas al noventa y tres por ciento de la velocidad de la luz.
+[[imagen=el Sol enorme a la izquierda y la Tierra pequeña a la derecha, unidos por un rayo de luz amarilla con un reloj dibujado en el medio; tarjeta=si; texto=8 minutos]] La luz del Sol tarda unos ocho minutos en llegar hasta la Tierra.
+O sea, cuando miras el Sol, lo estás viendo como era hace ocho minutos.
+Y tú, en el día veintisiete, harías ese mismo viaje en apenas nueve minutos.
 [[imagen=dos relojes dibujados: uno que avanza normal y otro que avanza muy despacio con líneas de movimiento; tarjeta=si; texto=El tiempo se estira]] Y aquí la física se vuelve rarísima.
 Según la teoría de la relatividad de Einstein, cuando te acercas a la velocidad de la luz, el tiempo pasa más despacio para ti.
 [[anim=sticky|explica]] A esta velocidad, tu reloj iría casi tres veces más lento que el de las personas en la Tierra.
 Volverías a casa y tus amigos estarían más viejos que tú.
+[[imagen=dos hermanos gemelos de caricatura: uno joven con traje de astronauta bajando de una nave y otro con canas y bastón esperándolo, los dos sonriendo]] Los científicos lo explican con el ejemplo de los gemelos.
+Si un gemelo viaja por el espacio casi a la velocidad de la luz y el otro se queda en la Tierra, al volver, el viajero sería más joven que su hermano.
+Suena a ciencia ficción, pero los relojes atómicos de los satélites tienen que corregir este efecto todos los días para que el GPS de tu celular funcione bien.
 
 ## Día 28: más rápido que la luz… ¿se puede?
 
@@ -127,13 +166,28 @@ Volverías a casa y tus amigos estarían más viejos que tú.
 [[imagen=Albert Einstein dibujado como caricatura amable frente a un pizarrón con la fórmula de la energía escrita con tiza; tarjeta=si; texto=¡Imposible!]] Pero aquí la ciencia dice: alto.
 Según la física, nada que tenga masa puede llegar a la velocidad de la luz.
 Mientras más te acercas, más energía necesitas, y para llegar justo a la velocidad de la luz necesitarías una energía infinita.
+[[imagen=un túnel circular gigante con tubos y cables de colores brillantes bajo tierra, como un acelerador de partículas, con científicos pequeños de caricatura]] Los científicos lo han comprobado en aceleradores de partículas como el del CERN, en Europa.
+Ahí empujan partículas diminutas hasta más del noventa y nueve coma nueve por ciento de la velocidad de la luz.
+[[anim=sticky|explica]] Pero por más energía que les den, nunca llegan al cien por ciento.
 [[anim=velocidad|El ranking final|Usain Bolt:44.7|Guepardo:110|Fórmula 1:370|Sonido (Sonic):1235|Estación Espacial:27600|Luz (Flash):1079252849]] Así que, en la vida real, hasta el día veintisiete serías el ser más rápido del universo… pero nunca podrías pasar la luz.
 [[imagen=una pila de revistas de cómics de colores sobre una mesa, con una lupa y un lápiz al lado, sin personajes reconocibles en las portadas; tarjeta=si; texto=Solo en los cómics]] Eso solo lo logra Flash en los cómics, gracias a una energía inventada llamada la Fuerza de la Velocidad.
+[[anim=sticky|explica]] Y Sonic, en sus videojuegos, nunca necesitó explicar cómo lo hace: simplemente corre, y ya.
+Así funciona la ficción: puede romper las reglas para contarnos una historia emocionante.
+La ciencia, en cambio, nos dice qué pasaría de verdad.
 
 ## ¿Quién gana?
 
 [[imagen=una línea de meta de una carrera con una cinta roja y confeti volando; anim=sticky|explica]] Entonces, ¿quién ganaría?
 Para el día ocho, ya le ganas al sonido, como Sonic.
 Pero solo Flash, en los cómics, puede romper la regla más grande de la física.
+
+## La lección del doble
+
+[[imagen=una planta pequeña que crece en varias macetas en fila, cada una el doble de grande que la anterior, hasta ser un árbol enorme; tarjeta=si; texto=Poquito a poquito]] Y hay una lección escondida en todo esto.
+El truco del doble no solo sirve para correr.
+[[imagen=un niño practicando guitarra en su cuarto, con un calendario en la pared lleno de marcas de días cumplidos]] Si cada día aprendes un poquito más, practicas un poquito más o ahorras un poquito más, al principio no notas el cambio.
+Pero con el tiempo, el crecimiento se vuelve enorme, como el arroz del tablero de ajedrez.
+[[anim=sticky|feliz]] Así que, aunque no puedas correr más rápido que la luz, sí puedes ser un poquito mejor cada día.
 [[imagen=un niño mirando las estrellas por un telescopio en una terraza de noche]] Y lo más bonito es que, para saber todo esto, no necesitamos superpoderes: nos basta con la ciencia y un poco de imaginación.
+Cada número de este video lo midieron personas reales: atletas, pilotos, astronautas y científicos que se hicieron la misma pregunta que tú.
 [[anim=sticky|feliz]] Y ahora te toca a ti: en una carrera entre Sonic y Flash, ¿quién crees que gana? Déjamelo en los comentarios.

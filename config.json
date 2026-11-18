@@ -117,5 +117,21 @@
     "activo": true,
     "texto_video": "¡Si te gustó esta historia, suscríbete y activa la campanita para no perderte la próxima!",
     "texto_short": "¡Suscríbete y activa la campanita para ver la historia completa!"
+  },
+  "presentador": {
+    "activo": true,
+    "cada_pantalla_completa": 5,
+    "fondo": [
+      [
+        0.05,
+        0.12,
+        0.3
+      ],
+      [
+        0.1,
+        0.32,
+        0.62
+      ]
+    ]
   }
 }
