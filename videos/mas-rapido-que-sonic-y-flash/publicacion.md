@@ -4,7 +4,7 @@
 
 ## 🎬 VIDEO LARGO (`video.mp4`, 10:24)
 
-**Miniatura:** `miniatura_minimal_1.jpg` ("¿MÁS RÁPIDO QUE FLASH?")
+**Portada:** `portada_video_largo.jpg` (DÍA 1 lento vs DÍA 28 rapidísimo). Alternativas: `miniatura_minimal_1.jpg`, `_2`, `_3`.
 
 ### Título
 ```
@@ -74,6 +74,8 @@ Y si pudieras correr el doble cada día, ¿en qué día te detendrías tú? 🏃
 
 ## 📱 SHORT 1 (`shorts/short_1.mp4`, 56 s): el gancho, días 1 a 4
 
+**Portada:** `portada_short_1.jpg`
+
 ### Título
 ```
 ¿Y Si Cada Día Corrieras el DOBLE de Rápido? 😱 #Shorts
@@ -102,6 +104,8 @@ que pasaria si, correr el doble cada dia, mas rapido que usain bolt, guepardo ve
 ---
 
 ## 📱 SHORT 2 (`shorts/short_2.mp4`, 52 s): la barrera del sonido
+
+**Portada:** `portada_short_2.jpg`
 
 ### Título
 ```
