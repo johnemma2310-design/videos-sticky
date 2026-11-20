@@ -365,3 +365,122 @@ def clip_presentador(e, cfg, destino, ruta_img, lado="izq", nueva=True):
            "-framerate", str(fps), "-i", "-", "-frames:v", str(n)] + _codec(cfg) + [str(destino)]
     _render(cmd, n, lambda ctx, i: _presentador(ctx, e, i / fps, dur, img, lado, nueva, cfg),
             f"Escena con Sticky presentador {e['id']}")
+
+# ---------------------------------------------------------------- tarjeta de barras lineales (porcentajes, dinero, etc.)
+# Guion: anim=barras|Título|unidad|Nombre:valor|Nombre:valor   (la última barra es la destacada)
+
+
+def _tarjeta_barras(ctx, e, t, dur, titulo, unidad, barras):
+    _fondo_tarjeta(ctx)
+    texto(ctx, titulo.upper(), ANCHO / 2, 110, 64, BLANCO, escala=rebote(prog(t, 0, 0.35)))
+    ancho_linea = 820 * suave(prog(t, 0.15, 0.6))
+    ctx.rectangle(ANCHO / 2 - ancho_linea / 2, 162, ancho_linea, 6)
+    ctx.set_source_rgb(*AZUL)
+    ctx.fill()
+    vmax = max(v for _, v in barras) or 1
+    x0, ancho_max = 620, 1050
+    alto_fila = min(140, 700 / len(barras))
+    y_ini = 260 + (700 - alto_fila * len(barras)) / 2
+    tramo = max(0.5, (dur * 0.75 - 0.3) / len(barras))
+    for k, (nombre, v) in enumerate(barras):
+        tk = 0.3 + k * tramo
+        if t < tk:
+            continue
+        u = suave(prog(t, tk, tk + min(0.8, tramo * 0.9)))
+        y = y_ini + k * alto_fila + alto_fila / 2
+        ultimo = k == len(barras) - 1
+        color = AMARILLO if ultimo else COLORES[k % len(COLORES)]
+        texto(ctx, nombre.upper(), x0 - 30, y, min(44, alto_fila * 0.36), BLANCO, ancla="r", alpha=min(1, u * 3))
+        largo = max(24, ancho_max * v / vmax) * u
+        redondeado(ctx, x0, y - alto_fila * 0.3, largo, alto_fila * 0.6, alto_fila * 0.3)
+        ctx.set_source_rgb(*color)
+        ctx.fill_preserve()
+        ctx.set_source_rgb(*NEGRO)
+        ctx.set_line_width(4)
+        ctx.stroke()
+        valor = v * u
+        num = (f"{valor:,.0f}".replace(",", ".") if v >= 100 else f"{valor:.1f}".replace(".", ",").replace(",0", ""))
+        etiqueta = f"{unidad}{num}" if unidad == "$" else f"{num} {unidad}".strip()
+        texto(ctx, etiqueta, x0 + largo + 22, y, min(42, alto_fila * 0.34), color, ancla="l", borde=3)
+
+
+def clip_barras(e, cfg, destino, spec):
+    partes = [p.strip() for p in spec.split("|")[1:]]
+    if len(partes) < 3:
+        raise PipelineError(f"anim=barras necesita Título|unidad|Nombre:valor...: {spec}")
+    titulo, unidad, items = partes[0], partes[1], partes[2:]
+    barras = []
+    for p in items:
+        nombre, valor = p.rsplit(":", 1)
+        barras.append((nombre.strip(), float(valor.replace(",", "."))))
+    fps, n = cfg["video"]["fps"], e["frames"]
+    dur = n / fps
+    cmd = ["ffmpeg", "-y", "-v", "error", "-f", "rawvideo", "-pix_fmt", "bgra", "-s", f"{ANCHO}x{ALTO}",
+           "-framerate", str(fps), "-i", "-", "-frames:v", str(n)] + _codec(cfg) + [str(destino)]
+    _render(cmd, n, lambda ctx, i: _tarjeta_barras(ctx, e, i / fps, dur, titulo, unidad, barras),
+            f"Tarjeta de barras de la escena {e['id']}")
+
+# ---------------------------------------------------------------- tarjeta de quiz (pregunta + 3 opciones + cuenta regresiva)
+# Guion: anim=quiz|Pregunta|Opción 1|Opción 2|Opción 3|número de la correcta (1-3)
+
+
+def _tarjeta_quiz(ctx, e, t, dur, pregunta, opciones, correcta):
+    _fondo_tarjeta(ctx)
+    texto(ctx, "¿TÚ QUÉ CREES?", ANCHO / 2, 90, 46, AMARILLO, escala=rebote(prog(t, 0, 0.3)))
+    texto(ctx, pregunta.upper(), ANCHO / 2, 190, 58, BLANCO, escala=rebote(prog(t, 0.1, 0.45)))
+    revela = dur * 0.78
+    letras = "ABC"
+    for k, op in enumerate(opciones):
+        tk = 0.4 + k * 0.35
+        if t < tk:
+            continue
+        u = rebote(prog(t, tk, tk + 0.3))
+        y = 360 + k * 170
+        ok = (k + 1) == correcta
+        if t >= revela:
+            r = prog(t, revela, revela + 0.25)
+            col = (0.20, 0.80, 0.40) if ok else (0.25, 0.30, 0.42)
+            alpha = 1.0 if ok else 1 - 0.5 * r
+        else:
+            col, alpha = (0.15, 0.30, 0.62), 1.0
+        ctx.save()
+        ctx.translate(ANCHO / 2, y)
+        ctx.scale(u * (1 + 0.06 * ok * suave(prog(t, revela, revela + 0.2))), u)
+        redondeado(ctx, -560, -60, 1120, 120, 60)
+        ctx.set_source_rgba(*col, alpha)
+        ctx.fill_preserve()
+        ctx.set_source_rgba(1, 1, 1, alpha)
+        ctx.set_line_width(5)
+        ctx.stroke()
+        ctx.arc(-480, 0, 40, 0, 2 * math.pi)
+        ctx.set_source_rgba(*AMARILLO, alpha)
+        ctx.fill()
+        texto(ctx, letras[k], -480, 0, 44, NEGRO, alpha=alpha)
+        texto(ctx, op.upper(), -410, 0, 50, BLANCO, ancla="l", alpha=alpha)
+        if ok and t >= revela:
+            texto(ctx, "✔", 500, 0, 70, BLANCO, fuente="Segoe UI Symbol")
+        ctx.restore()
+    # cuenta regresiva entre la última opción y la respuesta
+    inicio = 0.4 + 3 * 0.35 + 0.2
+    if inicio <= t < revela:
+        paso = (revela - inicio) / 3
+        n = 3 - int((t - inicio) / paso)
+        u = (t - inicio) % paso / paso
+        ctx.arc(ANCHO - 170, ALTO - 170, 90, -math.pi / 2, -math.pi / 2 + 2 * math.pi * (1 - u))
+        ctx.set_source_rgb(*AMARILLO)
+        ctx.set_line_width(14)
+        ctx.stroke()
+        texto(ctx, str(max(1, n)), ANCHO - 170, ALTO - 170, 90, BLANCO, escala=rebote(min(1, u * 4)))
+
+
+def clip_quiz(e, cfg, destino, spec):
+    partes = [p.strip() for p in spec.split("|")[1:]]
+    if len(partes) != 5:
+        raise PipelineError(f"anim=quiz necesita Pregunta|A|B|C|correcta: {spec}")
+    pregunta, opciones, correcta = partes[0], partes[1:4], int(partes[4])
+    fps, n = cfg["video"]["fps"], e["frames"]
+    dur = n / fps
+    cmd = ["ffmpeg", "-y", "-v", "error", "-f", "rawvideo", "-pix_fmt", "bgra", "-s", f"{ANCHO}x{ALTO}",
+           "-framerate", str(fps), "-i", "-", "-frames:v", str(n)] + _codec(cfg) + [str(destino)]
+    _render(cmd, n, lambda ctx, i: _tarjeta_quiz(ctx, e, i / fps, dur, pregunta, opciones, correcta),
+            f"Tarjeta de quiz de la escena {e['id']}")

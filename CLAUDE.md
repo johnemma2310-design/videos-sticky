@@ -37,7 +37,9 @@ segundo encuadre (punch-in) en las escenas largas; la voz va a +8% y sin silenci
   animales y objetos sin caras; nada tierno. La regla va en `config.json` → `flow.estilo`.
 - **Modo presentador** (`config.json` → `presentador`, APAGADO: al usuario no le gustó el recuadro tipo diapositiva): en ~80% de las escenas Sticky animado
   explica de pie (habla con la voz, gestos, caras según la frase) y la ilustración de Flow va en un recuadro sobre fondo
-  plano; 1 de cada 5 imágenes, los clips y las tarjetas van a pantalla completa. Videos de **10-15 min** (2.300-2.800 palabras).
+  plano; 1 de cada 5 imágenes, los clips y las tarjetas van a pantalla completa.
+- Videos de **15-20 min** (3.200-4.000 palabras). Tarjetas animadas: `anim=velocidad|...`, `anim=barras|Título|unidad|Nombre:valor|...`
+  (escala lineal) y `anim=quiz|Pregunta|A|B|C|n` (opciones + cuenta regresiva + respuesta en verde).
 - **Modo mixto** (capas animadas por código, `pipeline/capas.py`): `anim=sticky|explica|sorpresa|miedo|feliz|correr`
   pone a Sticky animado (habla con la voz) encima de la ilustración (usar imágenes SIN Sticky en esas escenas);
   `anim=velocidad|Título|Nombre:valor|...` tarjeta a pantalla completa con barras que crecen (km/h, escala log);

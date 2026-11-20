@@ -188,11 +188,15 @@ def generar(cfg: dict, log=print) -> dict:
             n_img += 1
             if n_img % 4 == 0 and n_img:
                 lado = "der" if lado == "izq" else "izq"
-        presenta = (cp.get("activo", False) and not e["clip_flow"] and not anim.startswith("velocidad")
+        presenta = (cp.get("activo", False) and not e["clip_flow"] and not anim.startswith(("velocidad", "barras", "quiz"))
                     and e.get("fuente_imagen") == "flow" and n_img % cada != cada - 1)
         e["presentador"] = presenta
         if anim.startswith("velocidad"):
             capas.clip_velocidad(e, cfg, destino, anim)
+        elif anim.startswith("barras"):
+            capas.clip_barras(e, cfg, destino, anim)
+        elif anim.startswith("quiz"):
+            capas.clip_quiz(e, cfg, destino, anim)
         elif presenta:
             capas.clip_presentador(e, cfg, destino, RAIZ / e["imagen"], lado, nueva)
         elif e["clip_flow"]:

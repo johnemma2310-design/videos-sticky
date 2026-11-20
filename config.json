@@ -17,8 +17,8 @@
     "corte_extra_desde_s": 3.2
   },
   "duracion": {
-    "minimo_min": 10,
-    "maximo_min": 15,
+    "minimo_min": 15,
+    "maximo_min": 20,
     "palabras_por_minuto": 150
   },
   "musica": {

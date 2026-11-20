@@ -12,7 +12,8 @@ Detente y explica solo si algo falla.
 
 - `<nombre>`: en minúsculas, con guiones (ej. `la-llorona`).
 - Si el usuario solo da un tema, investiga con WebSearch: usa 2-3 fuentes y no inventes datos. Cuando las versiones de una leyenda no coinciden, di "según algunas versiones".
-- Tamaño: **2.300-2.800 palabras** (la voz va a ~210 palabras/min). El video DEBE durar entre 10 y 15 minutos: después de `--hasta voz`, si `duracion_total` < 10 min, alarga el guion antes de pedir imágenes.
+- Tamaño: **3.200-4.000 palabras** (la voz va a ~210 palabras/min). El video DEBE durar entre **15 y 20 minutos** (pedido del usuario): después de `--hasta voz`, si `duracion_total` < 15 min, alarga el guion ANTES de pedir imágenes.
+- Que "embobe" a niños y adultos: gancho con avance ("quédate hasta el final"), preguntas `anim=quiz|Pregunta|A|B|C|n` (3-8 por video), mito o verdad, un diario o personaje que vuelve, minicliffhangers entre secciones, chistes de Sticky y un reto final.
 - Una frase = una escena de ~4-6 s. Usa frases cortas y fáciles de narrar.
 - Estructura, como en `videos/la-patasola/guion.md`:
   1. Gancho de miedo o misterio.
