@@ -4,7 +4,7 @@
 
 ## 🎬 VIDEO LARGO (`video.mp4`, 10:24)
 
-**Portada:** `portada_video_largo.jpg` (DÍA 1 lento vs DÍA 28 rapidísimo). Alternativas: `miniatura_minimal_1.jpg`, `_2`, `_3`.
+**Portada:** `portada_video_largo.jpg` (3 paneles: DÍA 1 trotando → DÍA 8 boom sónico → DÍA 28 rayo de luz). Alternativas: `miniatura_minimal_1.jpg`, `_2`, `_3`.
 
 ### Título
 ```

@@ -4,7 +4,7 @@
 
 ## 🎬 VIDEO LARGO (`video.mp4`, ~15:15)
 
-**Portada:** `portada_video_largo.jpg` (DÍA 1 feliz en la cama vs DÍA 100 mareado intentando caminar)
+**Portada:** `portada_video_largo.jpg` (3 paneles: DÍA 1 feliz en la cama → DÍA 50 aburrido → DÍA 100 mareado con andador)
 
 ### Título
 ```
