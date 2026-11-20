@@ -292,6 +292,16 @@ def mezclar_audio(escenas, cfg, voz, total) -> Path:
             ini, paso, rev = capas.quiz_tiempos(e["frames"] / fps)
             sonidos += [(t + ini + k * paso, 1100, 0.07) for k in range(3)] + [(t + rev, 1650, 0.35)]
         t += e["frames"] / fps
+    # "pop" suave cuando aparece una tarjeta (fondo blanco, velocidades, barras); no se repite dentro de una racha
+    if cfg.get("sonido", {}).get("efectos", True):
+        t, antes = 0.0, False
+        for e in escenas:
+            v = e["visual"]
+            es_tarjeta = bool(v.get("tarjeta")) or v.get("anim", "").startswith(("velocidad", "barras"))
+            if es_tarjeta and not antes and "imagen_de" not in e:
+                sonidos.append((t, 880, 0.10))
+            antes = es_tarjeta
+            t += e["frames"] / fps
     for ts, f, d in sonidos:
         idx = cmd.count("-i")
         cmd += ["-f", "lavfi", "-i", f"sine=frequency={f}:duration={d}"]

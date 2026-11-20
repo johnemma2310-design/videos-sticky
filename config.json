@@ -108,7 +108,8 @@
   "sonido": {
     "whoosh": true,
     "volumen_whoosh": 0.35,
-    "loudnorm": "I=-14:TP=-1.5:LRA=11"
+    "loudnorm": "I=-14:TP=-1.5:LRA=11",
+    "efectos": true
   },
   "shorts": {
     "max_s": 58,
