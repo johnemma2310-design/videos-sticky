@@ -64,7 +64,8 @@ def generar(cfg: dict, log=print) -> dict:
         dur = min(dur_archivo, palabras[-1]["fin"] + margen + 0.1) - recorte
         e["palabras"] = [{"p": w["p"], "ini": round(w["ini"] - recorte, 3), "fin": round(w["fin"] - recorte, 3)}
                          for w in palabras]
-        frames = max(1, round((dur + pausa) * fps))
+        extra = cfg.get("quiz", {}).get("cuenta_s", 3.6) if e["visual"].get("anim", "").startswith("quiz") else 0.0
+        frames = max(1, round((dur + pausa + extra) * fps))
         e["audio"] = rel(destino)
         e["recorte_audio"] = round(recorte, 3)
         e["duracion_audio"] = round(dur, 3)

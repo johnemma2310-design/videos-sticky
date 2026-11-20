@@ -285,6 +285,20 @@ def mezclar_audio(escenas, cfg, voz, total) -> Path:
         filtros.append(f"[{idx}:a]aresample=48000,volume={cm['volumen']},afade=t=in:d={cm['fade_in_s']},"
                        f"atrim=0:{total:.3f},afade=t=out:st={total - fo:.3f}:d={fo:.3f}[m]")
         mezclar.append("[m]")
+    # tic por cada número de la cuenta regresiva del quiz y "ding" al revelar
+    t, sonidos = 0.0, []
+    for e in escenas:
+        if e["visual"].get("anim", "").startswith("quiz"):
+            ini, paso, rev = capas.quiz_tiempos(e["frames"] / fps)
+            sonidos += [(t + ini + k * paso, 1100, 0.07) for k in range(3)] + [(t + rev, 1650, 0.35)]
+        t += e["frames"] / fps
+    for ts, f, d in sonidos:
+        idx = cmd.count("-i")
+        cmd += ["-f", "lavfi", "-i", f"sine=frequency={f}:duration={d}"]
+        ms = int(ts * 1000)
+        filtros.append(f"[{idx}:a]volume=0.35,afade=t=out:st={d * 0.4:.3f}:d={d * 0.6:.3f},aresample=48000,"
+                       f"aformat=channel_layouts=stereo,adelay={ms}|{ms}[q{idx}]")
+        mezclar.append(f"[q{idx}]")
     salida = TRABAJO / "mezcla.wav"
     if len(mezclar) == 1:
         cmd += ["-c:a", "pcm_s16le", str(salida)]
@@ -292,6 +306,12 @@ def mezclar_audio(escenas, cfg, voz, total) -> Path:
         filtros.append("".join(mezclar) + f"amix=inputs={len(mezclar)}:duration=first:normalize=0[a]")
         cmd += ["-filter_complex", ";".join(filtros), "-map", "[a]", "-c:a", "pcm_s16le", str(salida)]
     ejecutar(cmd, "Mezcla de audio (voz, transiciones y música)")
+    ln = cfg.get("sonido", {}).get("loudnorm")
+    if ln:  # volumen al nivel que usa YouTube (-14 LUFS): más fuerte y parejo
+        norm = TRABAJO / "mezcla_norm.wav"
+        ejecutar(["ffmpeg", "-y", "-v", "error", "-i", str(salida), "-af", f"loudnorm={ln}", "-ar", "48000",
+                  "-c:a", "pcm_s16le", str(norm)], "Normalización de volumen")
+        norm.replace(salida)
     return salida
 
 

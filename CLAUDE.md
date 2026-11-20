@@ -19,6 +19,8 @@ Al final de cada video y Short se pega solo un **cierre animado** (Sticky dice "
 campanita): `pipeline/outro.py`, textos en `config.json` → `outro`, se guarda en `recursos/`.
 Sticky animado por código (vectorial, cairo): `pipeline/animacion.py` (muñeco, caras, poses);
 prueba de 30 s en `prueba_animada.py` → `videos/prueba-animada/video.mp4`.
+El audio final se normaliza a -14 LUFS (`config.json` → `sonido.loudnorm`), el nivel de YouTube. Las escenas `anim=quiz`
+duran `quiz.cuenta_s` (3,6 s) extra para una cuenta regresiva real con tic-tac.
 Los videos llevan subtítulos palabra por palabra quemados, whoosh en cada cambio de imagen y un
 segundo encuadre (punch-in) en las escenas largas; la voz va a +8% y sin silencios entre frases.
 

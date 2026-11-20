@@ -20,7 +20,7 @@ from .comun import RAIZ, PipelineError, ejecutar
 
 RECURSOS = RAIZ / "recursos"
 SR = 48000
-VERSION = 2  # subir si cambia el dibujo, para que se vuelva a renderizar
+VERSION = 3  # subir si cambia el dibujo, para que se vuelva a renderizar
 
 # ------------------------------------------------------------------ voz y sonidos
 
@@ -261,6 +261,7 @@ def generar(cfg, vertical=False):
     proc = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "bgra", "-s", f"{W}x{H}",
                              "-r", str(fps), "-i", "-", "-i", str(wav), "-map", "0:v", "-map", "1:a",
                              "-c:v", "libx264", "-preset", "medium", "-crf", "18", "-pix_fmt", "yuv420p",
+                             "-af", "loudnorm=" + cfg.get("sonido", {}).get("loudnorm", "I=-14:TP=-1.5:LRA=11"),
                              "-c:a", "aac", "-b:a", "192k", "-ar", str(SR), "-ac", "2", "-t", f"{dur:.3f}", str(mp4)],
                             stdin=subprocess.PIPE)
     for f in range(int(round(dur * fps))):

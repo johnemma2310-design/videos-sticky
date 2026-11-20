@@ -424,11 +424,18 @@ def clip_barras(e, cfg, destino, spec):
 # Guion: anim=quiz|Pregunta|Opción 1|Opción 2|Opción 3|número de la correcta (1-3)
 
 
+def quiz_tiempos(dur):
+    """(inicio de la cuenta, duración de cada número, momento de revelar). La cuenta usa los últimos ~4 s."""
+    revela = max(1.8, dur - 0.9)
+    inicio = max(1.45, revela - 3.0)
+    return inicio, (revela - inicio) / 3, revela
+
+
 def _tarjeta_quiz(ctx, e, t, dur, pregunta, opciones, correcta):
     _fondo_tarjeta(ctx)
     texto(ctx, "¿TÚ QUÉ CREES?", ANCHO / 2, 90, 46, AMARILLO, escala=rebote(prog(t, 0, 0.3)))
     texto(ctx, pregunta.upper(), ANCHO / 2, 190, 58, BLANCO, escala=rebote(prog(t, 0.1, 0.45)))
-    revela = dur * 0.78
+    inicio, paso, revela = quiz_tiempos(dur)
     letras = "ABC"
     for k, op in enumerate(opciones):
         tk = 0.4 + k * 0.35
@@ -461,9 +468,7 @@ def _tarjeta_quiz(ctx, e, t, dur, pregunta, opciones, correcta):
             texto(ctx, "✔", 500, 0, 70, BLANCO, fuente="Segoe UI Symbol")
         ctx.restore()
     # cuenta regresiva entre la última opción y la respuesta
-    inicio = 0.4 + 3 * 0.35 + 0.2
     if inicio <= t < revela:
-        paso = (revela - inicio) / 3
         n = 3 - int((t - inicio) / paso)
         u = (t - inicio) % paso / paso
         ctx.arc(ANCHO - 170, ALTO - 170, 90, -math.pi / 2, -math.pi / 2 + 2 * math.pi * (1 - u))
